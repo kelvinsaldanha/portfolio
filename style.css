@@ -2565,3 +2565,33 @@ html, body {
     overflow-x: clip;  /* para navegadores modernos */
 }
 
+/* =============================================
+   GALERIA DE IMAGENS NOS POSTS
+   ============================================= */
+.galeria-post {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.galeria-post img {
+    border-radius: 4px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+/* Responsivo: em telas menores, 2 colunas */
+@media (max-width: 600px) {
+    .galeria-post {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsivo: em telas muito pequenas, 1 coluna */
+@media (max-width: 400px) {
+    .galeria-post {
+        grid-template-columns: 1fr;
+    }
+}
