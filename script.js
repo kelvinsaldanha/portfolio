@@ -511,3 +511,38 @@ allFadeElements.forEach((el, index) => {
     el.style.transitionDelay = (index * 0.05) + 's';
   }
 });
+
+// ============================================
+// CARROSSEL PARA POSTS
+// ============================================
+document.querySelectorAll('.carrossel-container').forEach(container => {
+    const slides = container.querySelectorAll('.carrossel-slide');
+    const contador = container.querySelector('.carrossel-contador');
+    const btnEsq = container.querySelector('.carrossel-btn-esquerda');
+    const btnDir = container.querySelector('.carrossel-btn-direita');
+    let index = 0;
+    const total = slides.length;
+
+    function atualizarCarrossel() {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        if (contador) {
+            contador.textContent = `${index + 1} / ${total}`;
+        }
+    }
+
+    function irPara(direcao) {
+        index = (index + direcao + total) % total;
+        atualizarCarrossel();
+    }
+
+    if (btnEsq) btnEsq.addEventListener('click', () => irPara(-1));
+    if (btnDir) btnDir.addEventListener('click', () => irPara(1));
+
+    // Inicializa
+    atualizarCarrossel();
+
+    // (Opcional) Auto-play a cada 5 segundos, se quiser
+    // setInterval(() => irPara(1), 5000);
+});
