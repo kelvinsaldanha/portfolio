@@ -79,7 +79,7 @@ A organização dos arquivos foi pensada para ser **modular**, **fácil de naveg
 ├── Gemfile                # Dependências Ruby
 ├── Gemfile.lock           # Versões travadas das dependências
 └── README.md              # Documentação do projeto
-
+```
 
 🛠️ Como Customizar
 O projeto foi construído para que alterações de dados básicos não exijam conhecimento profundo de código. Siga os passos abaixo:
