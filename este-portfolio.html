@@ -1,13 +1,50 @@
 ---
 layout: default
 title: "Este Portfólio | Kelvin Saldanha"
-description: "Diário de bordo do desenvolvimento deste portfólio — desde a concepção até os refinamentos finais. Tecnologias, desafios, aprendizados e decisões de design documentados em detalhe."
+description: "Diário de bordo do desenvolvimento deste portfólio — da concepção aos refinamentos. Tecnologias, desafios, aprendizados e decisões de design."
 permalink: /este-portfolio/
 ---
 
-<!-- ============================================================
-     HERO INTERNO
-     ============================================================ -->
+<style>
+  .diario-sumario {
+    margin-top: 1.5rem;
+  }
+  .diario-sumario ol {
+    margin-top: 0.5rem;
+    padding-left: 1.25rem;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  .diario-lista {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: var(--color-text-muted);
+  }
+  .diario-pre {
+    background: var(--color-surface);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+  .diario-timeline {
+    margin-top: 2rem;
+    max-width: 700px;
+  }
+  .diario-bloco {
+    margin-top: 3rem;
+  }
+  .diario-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+</style>
+
 <section class="hero" aria-labelledby="projeto-titulo">
   <div class="container">
     <p class="hero__overline">Projeto · Desenvolvimento Web</p>
@@ -18,286 +55,233 @@ permalink: /este-portfolio/
   </div>
 </section>
 
-<!-- ============================================================
-     CONTEÚDO DO PROJETO
-     ============================================================ -->
 <section class="section" id="projeto-conteudo" aria-labelledby="projeto-conteudo-titulo">
   <div class="container">
-
     <div class="sobre-content">
 
-      <!-- ============================================================
-           VISÃO GERAL
-           ============================================================ -->
-      <h2 id="projeto-conteudo-titulo">📋 Visão Geral do Projeto</h2>
+      <h2 id="projeto-conteudo-titulo">Visão geral do projeto</h2>
       <p>
-        Este site nasceu de uma necessidade simples, mas cresceu para se tornar um dos projetos mais desafiadores e gratificantes que já desenvolvi. A ideia inicial era ter um espaço profissional para apresentar meus projetos e experiências na área de equipamentos biomédicos. Porém, no processo, percebi que <strong>construir um site do zero</strong> era, por si só, um projeto que merecia ser documentado — e é exatamente isso que esta página faz.
+        Este site nasceu de uma necessidade simples, mas cresceu e se tornou um dos projetos mais desafiadores e gratificantes que já desenvolvi. A ideia inicial era ter um espaço profissional para apresentar meus projetos e experiências na área de equipamentos biomédicos. No processo, percebi que <strong>construir um site do zero</strong> era, por si só, um projeto que merecia ser documentado — e é exatamente isso que esta página faz.
+      </p>
+      <p>
+        O que começou como um site estático em HTML, CSS e JavaScript puro evoluiu para um site gerado com <strong>Jekyll</strong>, com tema claro/escuro, animações, lightbox, sistema de “ver mais” e dezenas de detalhes ajustados ao longo de semanas. Cada seção abaixo reflete uma decisão técnica, um problema superado ou uma lição aprendida.
+      </p>
+      <p>
+        Abaixo está o processo completo — do planejamento à implementação — incluindo as dificuldades, o que aprendi em cada etapa e por que tomei determinadas decisões. Este é um <strong>diário de bordo</strong>.
       </p>
 
-      <p>
-        O que começou como um site estático em HTML/CSS/JS puro evoluiu para uma aplicação completa com <strong>Jekyll</strong>, modo escuro, animações, lightbox, sistema de "ver mais", e uma infinidade de detalhes que foram ajustados ao longo de semanas. Cada seção desta página é um reflexo de uma decisão técnica, um problema superado ou uma lição aprendida.
-      </p>
-
-      <p>
-        Abaixo, você encontrará uma documentação detalhada de todo o processo — do planejamento à implementação final — incluindo as dificuldades que enfrentei, o que aprendi em cada etapa e por que tomei determinadas decisões. Este é, literalmente, um <strong>diário de bordo</strong>.
-      </p>
-
-      <!-- ============================================================
-           TABELA DE CONTEÚDO
-           ============================================================ -->
-      <div class="nota-box">
+      <div class="nota-box diario-sumario">
         <strong>Sumário</strong>
-        <ol style="margin-top: 0.5rem; padding-left: 1.25rem; color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.8;">
-          <li><a href="#historico">Histórico de Desenvolvimento</a></li>
-          <li><a href="#fase-1">Fase 1: O Início — HTML e CSS Puro</a></li>
-          <li><a href="#fase-2">Fase 2: Migração para Jekyll</a></li>
-          <li><a href="#fase-3">Fase 3: Modo Escuro e Personalização</a></li>
-          <li><a href="#fase-4">Fase 4: Animações e Microinterações</a></li>
-          <li><a href="#fase-5">Fase 5: Lightbox e Galeria de Imagens</a></li>
-          <li><a href="#fase-6">Fase 6: SEO e Acessibilidade</a></li>
-          <li><a href="#fase-7">Fase 7: Refinamentos Finais</a></li>
-          <li><a href="#tecnologias">Tecnologias Utilizadas</a></li>
-          <li><a href="#estrutura">Estrutura do Projeto</a></li>
-          <li><a href="#dificuldades">Dificuldades Enfrentadas</a></li>
-          <li><a href="#aprendizados">O Que Aprendi</a></li>
-          <li><a href="#status">Status Atual e Próximos Passos</a></li>
+        <ol>
+          <li><a href="#historico">Histórico de desenvolvimento</a></li>
+          <li><a href="#fase-1">Fase 1: o início — HTML e CSS puro</a></li>
+          <li><a href="#fase-2">Fase 2: migração para Jekyll</a></li>
+          <li><a href="#fase-3">Fase 3: modo escuro e personalização</a></li>
+          <li><a href="#fase-4">Fase 4: animações e microinterações</a></li>
+          <li><a href="#fase-5">Fase 5: lightbox e galeria de imagens</a></li>
+          <li><a href="#fase-6">Fase 6: SEO e acessibilidade</a></li>
+          <li><a href="#fase-7">Fase 7: refinamentos finais</a></li>
+          <li><a href="#tecnologias">Tecnologias utilizadas</a></li>
+          <li><a href="#estrutura">Estrutura do projeto</a></li>
+          <li><a href="#dificuldades">Dificuldades enfrentadas</a></li>
+          <li><a href="#aprendizados">O que aprendi</a></li>
+          <li><a href="#status">Status atual e próximos passos</a></li>
         </ol>
       </div>
 
-      <!-- ============================================================
-           HISTÓRICO
-           ============================================================ -->
-      <h2 id="historico" style="margin-top: 3rem;">🗓️ Histórico de Desenvolvimento</h2>
-
+      <h2 id="historico" class="diario-bloco">Histórico de desenvolvimento</h2>
       <p>
-        Antes de entrar nos detalhes de cada fase, quero contextualizar o momento em que esse projeto começou. Estava no meio do curso técnico de Equipamentos Biomédicos, com projetos acadêmicos se acumulando (Eye Tracker CK², Monitor Multiparamétrico, Guia de Respiração) e percebi que precisava de um lugar para organizar tudo isso. Foi aí que decidi construir meu próprio site.
+        Antes dos detalhes de cada fase, o contexto: eu estava no curso técnico de Equipamentos Biomédicos, com projetos acadêmicos se acumulando (Eye Tracker CK², Monitor Multiparamétrico, Guia de Respiração), e precisei de um lugar para organizar tudo. Foi aí que decidi construir o próprio site.
+      </p>
+      <p>
+        O desenvolvimento não foi linear. Tive avanços rápidos e semanas de travamento. Precisei aprender tecnologias novas, revisar decisões e, às vezes, refazer o que já estava “pronto”. Isso faz parte do processo — e é o que documentei aqui.
       </p>
 
-      <p>
-        O desenvolvimento não foi linear. Passei por várias fases, algumas com avanços rápidos e outras com semanas de travamento. Ao longo do caminho, tive que aprender novas tecnologias, revisar decisões anteriores e, às vezes, refazer coisas que já estavam prontas. Tudo isso faz parte do processo, e é exatamente isso que quero documentar aqui.
-      </p>
-
-      <!-- Timeline de desenvolvimento -->
-      <div class="timeline" style="margin-top: 2rem; max-width: 700px;">
+      <div class="timeline diario-timeline">
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>Concepção e Planejamento</h3>
+            <h3>Concepção e planejamento</h3>
             <p>
-              Definição do objetivo do site, levantamento de conteúdo (projetos, publicações, conquistas) e criação do primeiro wireframe. A decisão mais importante foi <strong>não usar frameworks</strong> — tudo seria feito com HTML, CSS e JavaScript puro.
+              Definição do objetivo, levantamento de conteúdo (projetos, publicações, conquistas) e primeiro wireframe. A decisão inicial foi <strong>não usar framework de UI</strong> — HTML, CSS e JavaScript puro, para entender cada linha.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
             <h3>Primeira versão: HTML/CSS/JS</h3>
             <p>
-              Construção das primeiras páginas (Home, Sobre, Projetos) com CSS grid, flexbox e JavaScript para o menu mobile. Primeiras animações de fade-in implementadas.
+              Primeiras páginas (Home, Sobre, Projetos) com CSS Grid, Flexbox e JavaScript no menu mobile. Primeiras animações de fade-in.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
             <h3>Migração para Jekyll</h3>
             <p>
-              O site cresceu e a repetição de HTML se tornou um problema. Migrei para Jekyll, que permitiu separar navbar, footer e layouts. Hospedagem no GitHub Pages.
+              O site cresceu e a repetição de HTML virou problema. Jekyll permitiu separar navbar, footer e layout. Hospedagem no GitHub Pages, com <code>baseurl: /portfolio</code>.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>Modo Escuro e Personalização</h3>
+            <h3>Modo escuro e personalização</h3>
             <p>
-              Implementação do dark mode com detecção de preferência do sistema e persistência via localStorage. Ajuste de todas as cores, sombras e bordas para os dois temas.
+              Tema com CSS Custom Properties, detecção de <code>prefers-color-scheme</code> e persistência no <code>localStorage</code>. Cores, sombras e bordas nos dois temas.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>Animações e Microinterações</h3>
+            <h3>Animações e microinterações</h3>
             <p>
-              Implementação de fade-in com Intersection Observer, efeito stagger nos cards, tilt 3D nos cards de projeto e parallax suave no hero.
+              Fade-in com Intersection Observer, stagger nos cards, tilt 3D nos cards de projeto e parallax suave no hero.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>Lightbox e Galeria</h3>
+            <h3>Lightbox e galeria</h3>
             <p>
-              Criação de um sistema de lightbox genérico para ampliar imagens em projetos e publicações, com navegação por teclado (setas, Escape) e suporte a gestos.
+              Lightbox genérico para projetos e publicações, com teclado (setas, Escape) e clique fora para fechar.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>SEO e Acessibilidade</h3>
+            <h3>SEO e acessibilidade</h3>
             <p>
-              Adição de JSON-LD, Open Graph, robots.txt, sitemap.xml, skip-links, ARIA labels e correção de problemas de contraste. Testes com Lighthouse.
+              JSON-LD, Open Graph, robots.txt, sitemap, skip-link, ARIA e contraste. Testes com Lighthouse.
             </p>
           </div>
         </div>
-
         <div class="timeline__item">
           <div class="timeline__marker"></div>
           <div class="timeline__content">
-            <h3>Refinamentos Finais</h3>
+            <h3>Refinamentos</h3>
             <p>
-              Otimização de imagens (WebP), correção de bugs de responsividade, página 404 personalizada e ajustes finos de tipografia e espaçamento.
+              Compressão de imagens, correções de responsividade, página 404 personalizada e ajustes de tipografia e espaçamento.
             </p>
           </div>
         </div>
       </div>
 
-      <!-- ============================================================
-           FASE 1
-           ============================================================ -->
-      <h2 id="fase-1" style="margin-top: 3rem;">🔨 Fase 1: O Início — HTML e CSS Puro</h2>
-
+      <h2 id="fase-1" class="diario-bloco">Fase 1: o início — HTML e CSS puro</h2>
       <p>
-        Quando decidi criar o site, a primeira decisão foi <strong>não usar nenhum framework</strong> (React, Vue, etc.) nem construtores de sites (Wix, WordPress). Queria entender cada linha de código e ter controle total sobre o resultado. Além disso, como estudante de equipamentos biomédicos, não tinha formação específica em desenvolvimento web, então tudo seria aprendido na prática.
+        A primeira decisão foi <strong>não usar framework</strong> (React, Vue) nem construtor (Wix, WordPress). Queria entender cada linha e ter controle do resultado. Como estudante de equipamentos biomédicos, não tinha formação em desenvolvimento web — tudo seria na prática.
       </p>
 
-      <h3>O Wireframe</h3>
-      <p>
-        Comecei desenhando à mão a estrutura das páginas. O site precisava ter:
-      </p>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Home</strong> — apresentação pessoal, links para redes sociais e botão de download do currículo;</li>
-        <li><strong>Sobre</strong> — história, formação e áreas de interesse;</li>
-        <li><strong>Projetos</strong> — galeria com os projetos técnicos e acadêmicos;</li>
-        <li><strong>Publicações</strong> — artigos, registros de aulas práticas e participações em eventos;</li>
-        <li><strong>Conquistas</strong> — medalhas, certificados e reconhecimentos;</li>
+      <h3>O wireframe</h3>
+      <p>Comecei desenhando à mão. O site precisava de:</p>
+      <ul class="diario-lista">
+        <li><strong>Home</strong> — apresentação, redes e currículo;</li>
+        <li><strong>Sobre</strong> — história, formação e interesses;</li>
+        <li><strong>Projetos</strong> — galeria técnica e acadêmica;</li>
+        <li><strong>Publicações</strong> — aulas práticas, artigos e eventos;</li>
+        <li><strong>Conquistas</strong> — medalhas e reconhecimentos;</li>
         <li><strong>Contato</strong> — canais de comunicação.</li>
       </ul>
-
       <p>
-        A princípio, queria fazer tudo em uma única página (one-page site), mas percebi que o conteúdo era muito extenso. Então, optei por múltiplas páginas, o que exigiria mais trabalho, mas resultaria em uma experiência mais organizada.
+        Pensei em one-page, mas o conteúdo era extenso demais. Múltiplas páginas dão mais trabalho e ficam mais organizadas.
       </p>
 
-      <h3>Desafios na Fase 1</h3>
+      <h3>Desafios na fase 1</h3>
       <p>
-        <strong>Grid e Flexbox</strong> foram os primeiros obstáculos. Eu não tinha experiência com esses conceitos, então assisti a vários tutoriais e estudei a documentação do MDN. Na época, ainda não entendia bem como fazer layouts responsivos, então o site era basicamente focado em desktop.
+        <strong>Grid e Flexbox</strong> foram os primeiros obstáculos. Estudei a documentação do MDN. No começo o layout era quase só desktop.
+      </p>
+      <p>
+        O <strong>menu mobile</strong> começou como um botão que só mostrava/escondia o menu. Faltavam teclado, clique fora e animação.
+      </p>
+      <p>
+        Cada erro ensinava. Descobri que <code>display: none</code> impede transição. A solução foi <code>position: fixed</code> com <code>right: -100%</code> e transicionar <code>right</code>.
       </p>
 
+      <h2 id="fase-2" class="diario-bloco">Fase 2: migração para Jekyll</h2>
       <p>
-        Outro problema foi o <strong>menu mobile</strong>. Eu queria um menu hambúrguer que funcionasse bem, mas meu primeiro código era simplesmente um botão que mostrava/escondia o menu. Faltava suporte a teclado, fechamento por clique fora e animações suaves.
+        Depois das primeiras páginas, o navbar, o footer e o <code>&lt;head&gt;</code> se repetiam em todo HTML. Mudar um link exigia editar todas as páginas. Isso não escala.
       </p>
-
       <p>
-        Aprender na prática foi a melhor parte. Cada erro me ensinava algo novo. Por exemplo, descobri que usar <code>display: none</code> para esconder o menu mobile impedia que animações de transição funcionassem. A solução foi usar <code>position: fixed</code> com <code>right: -100%</code> e transição em <code>right</code>.
-      </p>
-
-      <!-- ============================================================
-           FASE 2
-           ============================================================ -->
-      <h2 id="fase-2" style="margin-top: 3rem;">⚙️ Fase 2: Migração para Jekyll</h2>
-
-      <p>
-        Depois de construir as primeiras páginas, percebi que estava <strong>repetindo muito código</strong>. O navbar, o footer e o head (meta tags, links de fontes, CSS) se repetiam em todos os HTML. Se eu quisesse mudar uma única coisa no navbar, teria que editar todas as páginas. Isso era insustentável.
-      </p>
-
-      <p>
-        Foi quando descobri o <strong>Jekyll</strong>, um gerador de sites estáticos escrito em Ruby. A ideia era simples: você escreve templates (layouts) e arquivos parciais (includes), e o Jekyll gera as páginas HTML finais.
+        O <strong>Jekyll</strong> (gerador de site estático em Ruby) resolve: layouts, includes e HTML final gerado na build. O GitHub Pages roda isso nativamente.
       </p>
 
       <h3>Estrutura do Jekyll</h3>
-      <p>
-        Criei uma estrutura assim:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-/
+      <pre class="diario-pre"><code>/ 
 ├── _includes/
-│   ├── navbar.html     # Menu de navegação
-│   └── footer.html     # Rodapé
+│   ├── navbar.html
+│   └── footer.html
 ├── _layouts/
-│   └── default.html    # Layout base com head, header e footer
+│   └── default.html
 ├── _data/
-│   └── conquistas.yml  # Dados das conquistas (medalhas)
-├── images/             # Ativos visuais
-├── *.html              # Páginas (index, sobre, projetos, etc.)
-├── _config.yml         # Configuração do Jekyll
-└── style.css           # CSS global
-</pre>
-
+│   └── conquistas.yml
+├── images/
+├── *.html
+├── _config.yml
+└── style.css</code></pre>
       <p>
-        A migração não foi difícil porque eu já tinha o HTML pronto. Basicamente, movi o código do navbar para um arquivo separado, o mesmo para o footer, e criei um layout base.
+        A migração foi mecânica: navbar e footer foram para includes; o layout base passou a envolver o conteúdo de cada página.
       </p>
 
-      <h3>Dificuldade: Links com baseurl</h3>
+      <h3>Dificuldade: links com baseurl</h3>
       <p>
-        Um dos problemas que enfrentei foi o <strong>baseurl</strong>. Como o site estava hospedado em <code>https://kelvinsaldanha.github.io/portfolio/</code>, todos os links precisavam incluir o caminho <code>/portfolio</code>. No começo, eu colocava os links manualmente, o que era chato e propenso a erros.
+        O site vive em <code>https://kelvinsaldanha.github.io/portfolio/</code>. Todo link interno precisa do prefixo <code>/portfolio</code>. Caminho manual quebra fácil.
+      </p>
+      <p>
+        A solução é o filtro <code>relative_url</code> (não misturar com a tag <code>link</code>):
+      </p>
+{% raw %}
+      <pre class="diario-pre"><code>{{ '/sobre/' | relative_url }}</code></pre>
+{% endraw %}
+      <p>
+        Isso gera <code>/portfolio/sobre/</code>. A tag <code>link</code> é outra coisa — aponta para um arquivo fonte, por exemplo <code>sobre.html</code>. Não se escreve <code>link /sobre/ | relative_url</code>.
       </p>
 
+      <h3>Dificuldade: YAML front matter</h3>
       <p>
-        A solução foi usar o filtro <code>relative_url</code> do Jekyll:
+        No início eu colocava só <code>layout: default</code> e esquecia <code>title</code>, <code>description</code> e <code>permalink</code>. O título da aba ficava igual em todas as páginas e o SEO sofría.
       </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-&#123;% link /sobre/ | relative_url %&#125;
-</pre>
-
       <p>
-        Isso gera automaticamente o caminho correto com o baseurl. Foi um aprendizado importante — entender como o Jekyll lida com URLs relativas e absolutas.
+        <code>layout</code> <strong>não é tag Liquid</strong>. É chave do front matter no topo do arquivo:
       </p>
-
-      <h3>Dificuldade: Configuração do YAML Front Matter</h3>
+      <pre class="diario-pre"><code>---
+layout: default
+title: "Sobre | Kelvin Saldanha"
+permalink: /sobre/
+---</code></pre>
       <p>
-        No início, eu não entendia bem como o front matter (bloco de metadados no topo dos arquivos) funcionava. Colocava <code>layout: default</code> em todas as páginas, mas esquecia de adicionar <code>title</code>, <code>description</code> e <code>permalink</code>. Isso fazia com que o título do site ficasse sempre o mesmo em todas as páginas, prejudicando o SEO.
+        Defaults no <code>_config.yml</code> evitam repetir o que é comum a todas as páginas:
       </p>
-
-      <p>
-        Depois de algumas pesquisas, implementei defaults no <code>_config.yml</code>:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-defaults:
+      <pre class="diario-pre"><code>defaults:
   - scope:
       path: ""
     values:
       layout: "default"
       author: "Kelvin Saldanha"
-      lang: "pt-BR"
-</pre>
-
+      lang: "pt-BR"</code></pre>
       <p>
-        Isso garantiu que todas as páginas tivessem o layout correto sem que eu precisasse repetir o front matter.
+        Atenção: em páginas Jekyll, qualquer <code>{% raw %}{% … %}{% endraw %}</code> ou <code>{% raw %}{{ … }}{% endraw %}</code> é executado na build. Exemplos de código precisam ir dentro de <code>{% raw %}{% raw %} … {% endraw %}{% endraw %}</code>, senão o GitHub Pages recusa o deploy — foi exatamente o que aconteceu com a primeira versão desta página.
       </p>
 
-      <!-- ============================================================
-           FASE 3
-           ============================================================ -->
-      <h2 id="fase-3" style="margin-top: 3rem;">🌙 Fase 3: Modo Escuro e Personalização</h2>
-
+      <h2 id="fase-3" class="diario-bloco">Fase 3: modo escuro e personalização</h2>
       <p>
-        Uma das funcionalidades que mais orgulho me dá é o <strong>modo escuro</strong>. Não é apenas uma troca de cores — é um sistema completo que respeita a preferência do usuário e permite alternância manual.
+        O modo escuro não é só “inverter cores”. É um sistema que respeita a preferência do sistema e lembra a escolha do usuário.
       </p>
 
       <h3>Como funciona</h3>
       <p>
-        O CSS utiliza <strong>variáveis nativas</strong> (CSS Custom Properties) definidas em <code>:root</code>:
+        O CSS usa <strong>custom properties</strong> em <code>:root</code> (tema escuro padrão) e o override em <code>[data-theme="light"]</code>:
       </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-:root {
+      <pre class="diario-pre"><code>:root {
     --color-background: #0a0e1a;
     --color-surface: #111827;
     --color-text: #f1f5f9;
     --color-text-muted: #94a3b8;
     --color-primary: #3b82f6;
-    /* ... */
 }
 
 [data-theme="light"] {
@@ -305,16 +289,11 @@ defaults:
     --color-surface: #f8fafc;
     --color-text: #0f172a;
     --color-text-muted: #475569;
-    /* ... */
-}
-</pre>
-
+}</code></pre>
       <p>
-        O JavaScript detecta a preferência do sistema com <code>window.matchMedia('(prefers-color-scheme: dark)')</code> e armazena a escolha do usuário no <code>localStorage</code>:
+        O JavaScript lê o sistema com <code>matchMedia('(prefers-color-scheme: dark)')</code> e grava a escolha no <code>localStorage</code>:
       </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-function getTheme() {
+      <pre class="diario-pre"><code>function getTheme() {
     const saved = localStorage.getItem('theme');
     if (saved) return saved;
     return prefersDark.matches ? 'dark' : 'light';
@@ -324,54 +303,35 @@ function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     updateDarkModeIcon(theme);
-}
-</pre>
+}</code></pre>
 
       <h3>Dificuldades</h3>
       <p>
-        O maior desafio foi garantir que <strong>todos</strong> os elementos tivessem cores adequadas para ambos os temas. Era comum esquecer de definir uma variável para um elemento específico, o que resultava em contraste ruim no modo claro ou escuro.
+        O trabalho chato é garantir que <strong>todo</strong> elemento use variável, nunca cor solta. Card com <code>#fff</code> fixo some no tema escuro.
+      </p>
+      <p>
+        O outro problema é o <strong>flash</strong> (FOUC): se o tema só aplica no final de <code>script.js</code>, a página pinta no tema errado e depois troca. A correção é um script mínimo no <code>&lt;head&gt;</code> do layout, <em>antes</em> do CSS visível:
+      </p>
+      <pre class="diario-pre"><code>&lt;script&gt;
+  (function () {
+    var saved = localStorage.getItem('theme');
+    var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var theme = saved || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+&lt;/script&gt;</code></pre>
+      <p>
+        Sem o botão no navbar, o usuário só segue o sistema. A lógica no JS precisa do toggle no HTML (<code>id="darkmode-toggle"</code>); senão o código existe e a interface não entrega a função.
       </p>
 
+      <h2 id="fase-4" class="diario-bloco">Fase 4: animações e microinterações</h2>
       <p>
-        Por exemplo, os cards usam <code>var(--color-surface)</code> como fundo. No tema escuro, isso é <code>#111827</code> (quase preto), e no tema claro, <code>#f8fafc</code> (quase branco). Se eu usasse <code>#fff</code> fixo em algum lugar, não funcionaria bem no modo escuro.
-      </p>
-
-      <p>
-        Outra dificuldade foi o <strong>flicker</strong> (piscar) ao carregar a página. Como o JS roda após o HTML, o site carregava no tema claro e depois mudava para o escuro, causando um flash. A solução foi adicionar um script inline no <code>&lt;head&gt;</code> para aplicar o tema antes do primeiro render:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-&lt;script&gt;
-    (function() {
-        const saved = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const theme = saved || (prefersDark ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-    })();
-&lt;/script&gt;
-</pre>
-
-      <p>
-        Isso eliminou o flicker completamente. Aprendi que, para temas dinâmicos, o JavaScript deve rodar o mais cedo possível.
-      </p>
-
-      <!-- ============================================================
-           FASE 4
-           ============================================================ -->
-      <h2 id="fase-4" style="margin-top: 3rem;">✨ Fase 4: Animações e Microinterações</h2>
-
-      <p>
-        Depois de ter o site funcional, queria que ele fosse <strong>vivo</strong>. As animações não são apenas estéticas — elas guiam o usuário, transmitem personalidade e melhoram a experiência de navegação.
+        Com o site funcional, as animações passaram a guiar o olhar — desde que não atrapalhem quem pede menos movimento.
       </p>
 
       <h3>Fade-in com Intersection Observer</h3>
-      <p>
-        O primeiro passo foi implementar animações de entrada nos elementos ao rolar a página. Usei o <code>IntersectionObserver</code>, uma API nativa que detecta quando um elemento entra na viewport:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+      <pre class="diario-pre"><code>const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
             observer.unobserve(entry.target);
@@ -382,495 +342,316 @@ const observer = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -50px 0px'
 });
 
-animatedElements.forEach(el => observer.observe(el));
-</pre>
-
+animatedElements.forEach((el) => observer.observe(el));</code></pre>
       <p>
-        A classe <code>fade-in</code> define <code>opacity: 0</code> e <code>transform: translateY(20px)</code>, e a classe <code>visible</code> redefine para <code>opacity: 1</code> e <code>translateY(0)</code>. A transição é feita com CSS.
+        <code>.fade-in</code> começa com opacidade 0 e <code>translateY(20px)</code>; <code>.visible</code> anima até o estado final no CSS.
       </p>
 
-      <h3>Efeito Stagger (Cascata)</h3>
-      <p>
-        Para dar um efeito de cascata, adicionei um atraso progressivo com base no índice do elemento:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-allFadeElements.forEach((el, index) => {
-    const isStagger = staggerSelectors.some(selector => el.matches(selector));
+      <h3>Stagger</h3>
+      <pre class="diario-pre"><code>allFadeElements.forEach((el, index) => {
+    const isStagger = staggerSelectors.some((selector) => el.matches(selector));
     if (isStagger) {
         el.style.transitionDelay = (index * 0.05) + 's';
     }
-});
-</pre>
+});</code></pre>
 
-      <p>
-        Isso faz com que os cards entrem um após o outro, criando um fluxo visual agradável.
-      </p>
-
-      <h3>Tilt 3D nos Cards de Projeto</h3>
-      <p>
-        Uma das microinterações mais legais foi o <strong>efeito tilt 3D</strong> nos cards de projeto. Quando o mouse passa sobre um card, ele se inclina levemente, como se estivesse "olhando" para o cursor:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-card.addEventListener('mousemove', (e) => {
+      <h3>Tilt 3D nos cards de projeto</h3>
+      <pre class="diario-pre"><code>card.addEventListener('mousemove', (e) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     const rotateX = ((y - centerY) / 40) * -1;
     const rotateY = (x - centerX) / 40;
-    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-});
-</pre>
-
+    card.style.transform =
+      'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
+});</code></pre>
       <p>
-        O divisor <code>40</code> controla a intensidade — quanto maior, mais suave. Ajustei esse valor várias vezes até encontrar um equilíbrio entre sutil e perceptível.
+        O divisor <code>40</code> controla a intensidade. Em mobile o efeito deve desligar (não há cursor). <code>will-change: transform</code> só enquanto anima — permanente em vários cards custa GPU.
       </p>
 
       <h3>Dificuldades</h3>
       <p>
-        Uma das dificuldades foi garantir que as animações não interferissem no desempenho. O <code>IntersectionObserver</code> é eficiente, mas o <code>tilt 3D</code> usa transformações frequentes. Descobri que <code>will-change: transform</code> ajuda a GPU a otimizar, mas não devo usar em muitos elementos ao mesmo tempo.
+        <code>prefers-reduced-motion</code> no CSS zera duration, mas o JS do tilt/parallax continua calculando se não houver guarda. O CSS:
       </p>
-
-      <p>
-        Outro desafio foi a <strong>redução de movimento</strong>. Usuários com <code>prefers-reduced-motion</code> devem ter as animações desativadas. Implementei:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-@media (prefers-reduced-motion: reduce) {
+      <pre class="diario-pre"><code>@media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-}
-</pre>
+}</code></pre>
 
+      <h2 id="fase-5" class="diario-bloco">Fase 5: lightbox e galeria de imagens</h2>
       <p>
-        Isso foi um aprendizado importante sobre acessibilidade — nem todos os usuários conseguem (ou querem) ver animações.
-      </p>
-
-      <!-- ============================================================
-           FASE 5
-           ============================================================ -->
-      <h2 id="fase-5" style="margin-top: 3rem;">🖼️ Fase 5: Lightbox e Galeria de Imagens</h2>
-
-      <p>
-        O lightbox é um recurso que permite ampliar imagens em um modal, com navegação entre elas, fechamento por teclado (Escape), setas para avançar/voltar e uma legenda. Implementei um sistema genérico que funciona em qualquer página.
+        O lightbox amplia a imagem, mostra contador e legenda, fecha com Escape ou clique no fundo, e navega com as setas.
       </p>
 
       <h3>Como funciona</h3>
       <p>
-        O JavaScript seleciona todas as imagens com classes específicas (<code>.post-card__image</code> e <code>.figura-card img</code>). Ao clicar, abre o modal com a imagem ampliada. A legenda é extraída do título do post ou da legenda da figura:
+        O script seleciona <code>.post-card__image</code> e imagens de <code>.figura-card</code>. A legenda vem do DOM (título do post ou caption da figura):
       </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-function abrirLightbox(index) {
+      <pre class="diario-pre"><code>function abrirLightbox(index) {
     indiceAtual = index;
     const img = itens[indiceAtual];
     imagem.src = img.src;
     imagem.alt = img.alt || '';
-    
-    // Tenta extrair legenda
+
     const postCard = img.closest('.post-card');
     if (postCard) {
         const titulo = postCard.querySelector('.post-card__title');
         if (titulo) legenda.textContent = titulo.textContent.trim();
     }
-    
-    contador.textContent = `${indiceAtual + 1} / ${itens.length}`;
+
+    contador.textContent = (indiceAtual + 1) + ' / ' + itens.length;
     lightbox.classList.add('lightbox--ativo');
     document.body.style.overflow = 'hidden';
-}
-</pre>
+}</code></pre>
 
       <h3>Dificuldades</h3>
       <p>
-        O maior desafio foi lidar com a <strong>legenda dinâmica</strong>. Cada imagem precisa de uma legenda diferente, e algumas não têm. Tive que criar uma lógica flexível que busca a legenda no DOM, mas também permite um fallback.
+        Imagem sem <code>src</code> válido (arquivo 404) não deve abrir o modal:
       </p>
-
+      <pre class="diario-pre"><code>const itens = Array.from(imagens).filter((img) => {
+    return img.src && !img.src.includes('undefined');
+});</code></pre>
       <p>
-        Outra dificuldade foi o <strong>evento de clique</strong> — algumas imagens são clicáveis, outras não. Se uma imagem não tem um <code>src</code> válido (por exemplo, quando o arquivo não existe), ela não deveria abrir o lightbox. Filtrei os itens com:
+        Clique na imagem não pode fechar o overlay: o listener só fecha se <code>e.target === lightbox</code>. Com o modal aberto, <code>overflow: hidden</code> no <code>body</code> trava o scroll de fundo.
       </p>
 
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-const itens = Array.from(imagens).filter(img => img.src && !img.src.includes('undefined'));
-</pre>
-
+      <h2 id="fase-6" class="diario-bloco">Fase 6: SEO e acessibilidade</h2>
       <p>
-        Isso evita que o lightbox abra uma imagem quebrada.
+        Depois de funcional, o site precisava ser encontrado e usável com teclado e leitor de tela.
       </p>
 
-      <p>
-        Também descobri que o <code>scroll-behavior: smooth</code> no CSS pode atrapalhar o lightbox quando o modal é aberto. A solução foi adicionar <code>overflow: hidden</code> no <code>body</code> enquanto o lightbox estiver aberto, e remover ao fechar.
-      </p>
-
-      <!-- ============================================================
-           FASE 6
-           ============================================================ -->
-      <h2 id="fase-6" style="margin-top: 3rem;">🔍 Fase 6: SEO e Acessibilidade</h2>
-
-      <p>
-        Depois que o site estava funcional e bonito, percebi que ele precisava ser <strong>encontrado</strong> por mecanismos de busca e <strong>acessível</strong> para todos os usuários, incluindo aqueles que usam leitores de tela.
-      </p>
-
-      <h3>SEO (Search Engine Optimization)</h3>
-      <p>
-        Implementei várias práticas de SEO:
-      </p>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Meta descrições</strong> — únicas para cada página;</li>
-        <li><strong>Open Graph e Twitter Cards</strong> — para compartilhamento em redes sociais;</li>
-        <li><strong>JSON-LD</strong> — dados estruturados para o Google entender o conteúdo;</li>
-        <li><strong>sitemap.xml</strong> — lista todas as páginas;</li>
-        <li><strong>robots.txt</strong> — instruções para rastreadores;</li>
-        <li><strong>URLs semânticas</strong> — uso de <code>permalink</code> legível.</li>
+      <h3>SEO</h3>
+      <ul class="diario-lista">
+        <li><strong>Meta description</strong> única por página (front matter);</li>
+        <li><strong>Open Graph e Twitter Card</strong> no layout;</li>
+        <li><strong>JSON-LD</strong> com <code>Person</code>, <code>WebSite</code> e lista de <code>award</code> (não <code>Achievement</code> — esse tipo não se encaixa nesse bloco);</li>
+        <li><strong>sitemap</strong> gerado pelo plugin <code>jekyll-sitemap</code> — um <code>sitemap.xml</code> estático com URLs <code>.html</code> aponta para páginas que não existem quando o permalink é <code>/sobre/</code>;</li>
+        <li><strong>robots.txt</strong> apontando para o sitemap real;</li>
+        <li><strong>permalinks</strong> sem extensão.</li>
       </ul>
-
-      <p>
-        O JSON-LD foi o mais complexo. Criei um script no layout base que descreve a pessoa (com <code>@type: Person</code>) e as conquistas (com <code>@type: Achievement</code>). Isso ajuda o Google a entender que o site é de uma pessoa real e que as conquistas são eventos importantes.
-      </p>
 
       <h3>Acessibilidade</h3>
-      <p>
-        Acessibilidade foi um tópico que eu não conhecia bem. Aprendi que:
-      </p>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Skip links</strong> — permitem que usuários de leitores de tela pulem a navegação;</li>
-        <li><strong>ARIA labels</strong> — descrevem elementos interativos para leitores de tela;</li>
-        <li><strong>Contraste de cores</strong> — garante que o texto seja legível;</li>
-        <li><strong>Focus visible</strong> — indica qual elemento está focado;</li>
-        <li><strong>Teclado</strong> — todo o site deve ser navegável com Tab, Enter, Escape, etc.</li>
+      <ul class="diario-lista">
+        <li>Skip-link para o conteúdo principal;</li>
+        <li>ARIA no menu (<code>aria-expanded</code>, <code>aria-controls</code>, <code>aria-label</code>);</li>
+        <li>Contraste (WCAG AA) nos dois temas;</li>
+        <li><code>:focus-visible</code> para foco só no teclado;</li>
+        <li>Esc fecha o menu e o lightbox.</li>
       </ul>
-
-      <p>
-        Uma das correções que fiz foi adicionar <code>aria-expanded</code> ao botão do menu mobile:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-&lt;button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menu"&gt;
-</pre>
-
-      <p>
-        Isso informa ao leitor de tela se o menu está aberto ou fechado.
-      </p>
-
-      <h3>Dificuldades</h3>
-      <p>
-        O maior desafio foi o <strong>contraste de cores</strong>. No modo claro, alguns textos ficavam difíceis de ler porque usava cores como <code>#94a3b8</code> (cinza claro) sobre fundo branco. Verifiquei com ferramentas como o Lighthouse do Chrome e ajustei as cores para atender ao WCAG AA.
-      </p>
-
-      <p>
-        Outro problema foi o <strong>foco visível</strong>. Por padrão, muitos navegadores mostram um contorno azul quando um elemento recebe foco, mas isso pode ser removido ou ficar invisível. Implementei:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-:focus-visible {
+      <pre class="diario-pre"><code>&lt;button
+    class="nav__toggle"
+    id="nav-toggle"
+    aria-expanded="false"
+    aria-controls="nav-menu"
+    aria-label="Abrir menu"&gt;</code></pre>
+      <pre class="diario-pre"><code>:focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
-}
-</pre>
-
+}</code></pre>
       <p>
-        Isso garante que o foco seja visível apenas quando o usuário navega por teclado (não por mouse), usando a pseudo-classe <code>:focus-visible</code>.
+        No tema claro, <code>--color-text-muted</code> foi de um cinza fraco para <code>#475569</code>, depois do Lighthouse apontar contraste insuficiente.
       </p>
 
-      <!-- ============================================================
-           FASE 7
-           ============================================================ -->
-      <h2 id="fase-7" style="margin-top: 3rem;">🧹 Fase 7: Refinamentos Finais</h2>
+      <h2 id="fase-7" class="diario-bloco">Fase 7: refinamentos finais</h2>
 
+      <h3>Imagens</h3>
       <p>
-        A última fase foi dedicada a ajustes finos e polimento. Alguns dos itens mais importantes:
+        PNG enorme na foto de perfil (mais de 1&nbsp;MB) e capas em JPG pesado atrasam o LCP. O caminho certo: redimensionar, WebP/AVIF, <code>width</code>/<code>height</code> para evitar CLS, <code>loading="lazy"</code> abaixo da dobra e <code>loading="eager"</code> só no hero.
       </p>
+      <pre class="diario-pre"><code>&lt;img src="..." alt="..." width="800" height="600" loading="lazy" decoding="async"&gt;</code></pre>
 
-      <h3>Otimização de Imagens</h3>
-      <p>
-        As imagens estavam em JPG/PNG e aumentavam o tempo de carregamento. Converti para <strong>WebP</strong>, que oferece melhor compressão. O formato WebP é suportado por todos os navegadores modernos.
-      </p>
-
-      <p>
-        Além disso, adicionei <code>loading="lazy"</code> em todas as imagens abaixo da dobra, para que só sejam carregadas quando o usuário rolar até elas:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-&lt;img src="..." alt="..." loading="lazy" decoding="async"&gt;
-</pre>
-
-      <h3>Página 404 Personalizada</h3>
-      <p>
-        Em vez de uma página de erro genérica, criei uma experiência amigável com:
-      </p>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li>Número <code>404</code> em degradê;</li>
-        <li>Mensagem acolhedora;</li>
-        <li>Botões para voltar à home ou explorar projetos;</li>
-        <li>Links rápidos para as páginas principais.</li>
+      <h3>Página 404</h3>
+      <ul class="diario-lista">
+        <li>Código 404 visível;</li>
+        <li>Mensagem clara;</li>
+        <li>Atalhos para a home e para projetos.</li>
       </ul>
 
-      <h3>Barra de Progresso de Rolagem</h3>
-      <p>
-        Adicionei uma barra de progresso no topo da página que indica quanto do conteúdo foi rolado:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-function updateProgress() {
+      <h3>Barra de progresso de rolagem</h3>
+      <pre class="diario-pre"><code>function updateProgress() {
     const scrollTop = window.scrollY;
     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
     const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     progressBar.style.width = progress + '%';
-}
-</pre>
+}</code></pre>
 
+      <h3>Transição de página</h3>
       <p>
-        Isso foi um toque a mais que trouxe sensação de modernidade.
+        Fade-out no clique interno e fade-in na entrada. O botão Voltar do navegador quebra se não houver <code>pageshow</code> para limpar a classe:
       </p>
-
-      <h3>Transição Suave de Página</h3>
-      <p>
-        Implementei um fade-out ao sair da página e fade-in ao entrar:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-document.addEventListener('click', (e) => {
+      <pre class="diario-pre"><code>document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
-    // ... verifica se é link interno
     e.preventDefault();
     document.body.classList.add('is-leaving');
     setTimeout(() => {
         window.location.href = link.href;
     }, 400);
 });
-</pre>
 
-      <p>
-        A classe <code>is-leaving</code> define <code>opacity: 0</code> no <code>body</code>, e o <code>transition</code> faz o fade-out. Ao carregar a nova página, o <code>body</code> começa com <code>opacity: 0</code> e transita para <code>1</code>. Isso cria uma experiência mais coesa.
-      </p>
-
-      <p>
-        Uma das dificuldades foi garantir que a transição não interferisse no <code>back</code> do navegador. Adicionei um listener para <code>pageshow</code> que remove a classe <code>is-leaving</code>:
-      </p>
-
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
 window.addEventListener('pageshow', () => {
     document.body.classList.remove('is-leaving');
-    document.documentElement.classList.remove('is-loading');
     document.documentElement.classList.add('is-loaded');
-});
-</pre>
+});</code></pre>
 
-      <!-- ============================================================
-           TECNOLOGIAS
-           ============================================================ -->
-      <h2 id="tecnologias" style="margin-top: 3rem;">🛠️ Tecnologias Utilizadas</h2>
-
-      <p>
-        Cada tecnologia foi escolhida por um motivo. Aqui está a lista completa, com justificativas:
-      </p>
-
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Jekyll</strong> — gerador de sites estáticos. Escolhido porque permite reutilizar layouts e componentes, além de ser suportado nativamente pelo GitHub Pages.</li>
-        <li><strong>HTML5</strong> — estrutura semântica. Importante para SEO e acessibilidade.</li>
-        <li><strong>CSS3</strong> — estilização com variáveis, grid, flexbox e animações. Sem frameworks, para ter controle total.</li>
-        <li><strong>JavaScript (ES6+)</strong> — interatividade. Usei APIs nativas como <code>IntersectionObserver</code>, <code>matchMedia</code> e <code>localStorage</code>.</li>
-        <li><strong>Git & GitHub</strong> — controle de versão e hospedagem via GitHub Pages.</li>
-        <li><strong>Devicon & Font Awesome</strong> — ícones para tecnologias e ferramentas.</li>
-        <li><strong>Google Fonts (Inter)</strong> — tipografia moderna e legível.</li>
+      <h2 id="tecnologias" class="diario-bloco">Tecnologias utilizadas</h2>
+      <ul class="diario-lista">
+        <li><strong>Jekyll</strong> — layouts, includes e GitHub Pages nativo;</li>
+        <li><strong>HTML5</strong> — estrutura semântica;</li>
+        <li><strong>CSS3</strong> — variáveis, Grid, Flexbox, temas; sem framework de CSS;</li>
+        <li><strong>JavaScript (ES6+)</strong> — Intersection Observer, matchMedia, localStorage;</li>
+        <li><strong>Git e GitHub Pages</strong> — versionamento e hospedagem;</li>
+        <li><strong>Devicon</strong> — ícones de tecnologias (quando de fato usados na página);</li>
+        <li><strong>Google Fonts (Inter)</strong> — tipografia.</li>
       </ul>
 
-      <!-- ============================================================
-           ESTRUTURA
-           ============================================================ -->
-      <h2 id="estrutura" style="margin-top: 3rem;">📁 Estrutura do Projeto</h2>
-
+      <h2 id="estrutura" class="diario-bloco">Estrutura do projeto</h2>
+      <pre class="diario-pre"><code>/
+├── _data/              # conquistas.yml e outros dados
+├── _includes/          # navbar.html, footer.html
+├── _layouts/           # default.html
+├── images/
+│   ├── profile/
+│   ├── projects/
+│   ├── posts/
+│   └── conquistas/
+├── index.html
+├── sobre.html
+├── projetos.html
+├── publicacoes.html
+├── conquistas.html
+├── contato.html
+├── habilidades.html
+├── este-portfolio.html
+├── 404.html
+├── style.css
+├── script.js
+├── robots.txt
+├── _config.yml
+├── Gemfile
+└── README.md</code></pre>
       <p>
-        A organização dos arquivos foi pensada para ser modular e fácil de navegar:
+        O <code>sitemap.xml</code> não deve ser versionado na mão se o plugin <code>jekyll-sitemap</code> estiver ativo: o arquivo estático sobrescreve o gerado e fica desatualizado.
       </p>
 
-      <pre style="background: var(--color-surface); padding: 1rem; border-radius: var(--border-radius); overflow-x: auto; font-size: 0.85rem; color: var(--color-text-muted);">
-/
-├── _data/             # Dados estruturados (conquistas.yml)
-├── _includes/         # Partials reutilizáveis (navbar, footer)
-├── _layouts/          # Layouts base (default.html)
-├── images/            # Ativos visuais
-│   ├── profile/       # Fotos de perfil
-│   ├── projects/      # Imagens dos projetos
-│   ├── posts/         # Imagens das publicações
-│   └── conquistas/    # Imagens das medalhas
-├── index.html         # Página inicial
-├── sobre.html         # Sobre o autor (unificado com formação e experiências)
-├── projetos.html      # Galeria de projetos
-├── publicacoes.html   # Artigos e posts
-├── conquistas.html    # Prêmios e reconhecimentos
-├── contato.html       # Canais de comunicação
-├── habilidades.html   # Habilidades técnicas
-├── 404.html           # Página de erro personalizada
-├── style.css          # Estilização global e responsividade
-├── script.js          # Lógica, animações e configurações
-├── sitemap.xml        # Mapa do site para SEO
-├── robots.txt         # Instruções para rastreadores
-├── _config.yml        # Configuração do Jekyll
-├── Gemfile            # Dependências Ruby
-└── README.md          # Documentação do projeto
-</pre>
+      <h2 id="dificuldades" class="diario-bloco">Dificuldades enfrentadas</h2>
 
+      <h3>1. Menu mobile sem animação</h3>
       <p>
-        A estrutura é organizada por tipo de arquivo, não por funcionalidade. Isso facilita encontrar um arquivo específico: se preciso alterar o CSS, vou em <code>style.css</code>; se preciso mudar o navbar, vou em <code>_includes/navbar.html</code>.
+        <code>display: none</code> não anima. Solução: <code>position: fixed</code> + <code>right: -100%</code> → <code>0</code>.
       </p>
 
-      <!-- ============================================================
-           DIFICULDADES
-           ============================================================ -->
-      <h2 id="dificuldades" style="margin-top: 3rem;">⛰️ Dificuldades Enfrentadas</h2>
-
+      <h3>2. Flash do tema</h3>
       <p>
-        Nenhum projeto está livre de problemas. Aqui estão os desafios mais marcantes que enfrentei e como os resolvi:
-      </p>
-
-      <h3>1. Menu Mobile que Não Animava</h3>
-      <p>
-        No início, o menu mobile simplesmente aparecia/escondia com <code>display: none</code>. Quando tentei adicionar uma transição, percebi que era impossível animar um elemento que vai de <code>display: none</code> para <code>display: block</code>.
-      </p>
-      <p>
-        <strong>Solução:</strong> usei <code>position: fixed</code> com <code>right: -100%</code> e transicionei a propriedade <code>right</code> para <code>0</code>. Isso permite animações suaves.
-      </p>
-
-      <h3>2. Flicker do Modo Escuro</h3>
-      <p>
-        Ao carregar a página, o site piscava entre o tema claro e o escuro por causa do JavaScript rodar depois do HTML.
-      </p>
-      <p>
-        <strong>Solução:</strong> script inline no <code>&lt;head&gt;</code> que aplica o tema antes do primeiro render.
+        JS no final do body aplica o tema tarde. Solução: script inline no <code>&lt;head&gt;</code>.
       </p>
 
       <h3>3. Links quebrados com baseurl</h3>
       <p>
-        Como o site está hospedado em <code>/portfolio/</code>, os links relativos quebravam. Colocar <code>../</code> manualmente era confuso.
-      </p>
-      <p>
-        <strong>Solução:</strong> usar o filtro <code>relative_url</code> do Jekyll para gerar URLs corretas automaticamente.
+        Solução: <code>{% raw %}{{ '/pagina/' | relative_url }}{% endraw %}</code> em todo link interno.
       </p>
 
-      <h3>4. Lightbox Fechando ao Clicar na Imagem</h3>
+      <h3>4. Lightbox fechando ao clicar na imagem</h3>
       <p>
-        O lightbox fechava mesmo quando o usuário clicava na imagem, porque o evento de clique no <code>overlay</code> (fundo) era propagado.
-      </p>
-      <p>
-        <strong>Solução:</strong> verificar se o clique foi no próprio <code>overlay</code> antes de fechar. Usei <code>e.target === lightbox</code> no listener.
+        Solução: fechar só se <code>e.target === lightbox</code>.
       </p>
 
-      <h3>5. Legenda Dinâmica no Lightbox</h3>
+      <h3>5. Legenda dinâmica</h3>
       <p>
-        Cada imagem tinha uma legenda diferente, e algumas não tinham. Não queria adicionar atributos <code>data-*</code> em todas as imagens.
-      </p>
-      <p>
-        <strong>Solução:</strong> buscar a legenda no DOM com base no card pai. Para <code>post-card</code>, pega o título; para <code>figura-card</code>, pega a legenda.
+        Solução: ler o card pai (<code>.post-card</code> ou <code>.figura-card</code>), sem <code>data-*</code> em cada imagem.
       </p>
 
-      <h3>6. Contraste de Cores</h3>
+      <h3>6. Contraste no tema claro</h3>
       <p>
-        No modo claro, alguns textos estavam com contraste insuficiente (cinza claro sobre branco).
-      </p>
-      <p>
-        <strong>Solução:</strong> verifiquei com Lighthouse e ajustei as cores para atender ao WCAG AA. Alterei <code>--color-text-muted</code> no tema claro de <code>#64748b</code> para <code>#475569</code>.
+        Solução: Lighthouse + <code>--color-text-muted: #475569</code>.
       </p>
 
-      <h3>7. Efeito Tilt 3D com Desempenho Ruim</h3>
+      <h3>7. Tilt 3D pesado</h3>
       <p>
-        O tilt 3D causava lag em dispositivos com menos recursos, porque usava transformações constantes.
-      </p>
-      <p>
-        <strong>Solução:</strong> limitar o efeito a cards de projeto (não a todos os elementos) e usar <code>will-change: transform</code>. Também ajustei o divisor para tornar o movimento mais sutil.
+        Solução: só em <code>.projeto-card</code>, movimento curto, sem <code>will-change</code> permanente, desligado no touch e em reduced-motion.
       </p>
 
-      <h3>8. Transição de Página que Impedia o Botão "Voltar"</h3>
+      <h3>8. Transição vs. botão Voltar</h3>
       <p>
-        A transição de fade-out/suave fazia com que o botão "Voltar" do navegador não funcionasse corretamente.
-      </p>
-      <p>
-        <strong>Solução:</strong> adicionar um listener para <code>pageshow</code> que remove a classe <code>is-leaving</code>.
+        Solução: listener <code>pageshow</code> removendo <code>is-leaving</code>.
       </p>
 
-      <!-- ============================================================
-           APRENDIZADOS
-           ============================================================ -->
-      <h2 id="aprendizados" style="margin-top: 3rem;">🎓 O Que Aprendi</h2>
-
+      <h3>9. Build do GitHub Pages recusando esta página</h3>
       <p>
-        Este projeto foi uma jornada de aprendizado intensa. Aqui estão os principais conhecimentos que adquiri:
+        Documentar Liquid com <code>{% raw %}{% include %}{% endraw %}</code> e <code>{% raw %}{% layout %}{% endraw %}</code> soltos faz o Jekyll tentar executar as tags. <code>include</code> sem arquivo quebra a build; <code>layout</code> nem é tag. Solução: <code>{% raw %}{% raw %} … {% endraw %}{% endraw %}</code> em todo exemplo, e nunca usar <code>layout</code> como tag.
       </p>
 
-      <h3>Desenvolvimento Web</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>HTML semântico:</strong> a importância de usar tags como <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code> e <code>&lt;main&gt;</code> para SEO e acessibilidade.</li>
-        <li><strong>CSS Grid e Flexbox:</strong> entender quando usar cada um. Grid para layouts em duas dimensões, Flexbox para uma dimensão.</li>
-        <li><strong>Variáveis CSS:</strong> como usar <code>--var</code> para criar temas dinâmicos com facilidade.</li>
-        <li><strong>Responsividade:</strong> usar <code>clamp()</code>, <code>min()</code>, <code>max()</code> e media queries para adaptar o layout.</li>
-        <li><strong>JavaScript moderno:</strong> arrow functions, destructuring, spread operator, template literals e módulos ES6.</li>
-        <li><strong>APIs do navegador:</strong> <code>IntersectionObserver</code>, <code>matchMedia</code>, <code>localStorage</code>, <code>scrollTo</code>, <code>closest</code>.</li>
+      <h2 id="aprendizados" class="diario-bloco">O que aprendi</h2>
+
+      <h3>Desenvolvimento web</h3>
+      <ul class="diario-lista">
+        <li><strong>HTML semântico</strong> — <code>section</code>, <code>article</code>, <code>nav</code>, <code>main</code>;</li>
+        <li><strong>Grid e Flexbox</strong> — Grid em duas dimensões, Flexbox em uma;</li>
+        <li><strong>Custom properties</strong> — temas sem duplicar CSS;</li>
+        <li><strong>Responsividade</strong> — <code>clamp()</code>, <code>min()</code>, <code>max()</code>, media queries;</li>
+        <li><strong>JavaScript moderno</strong> — arrow functions, <code>const</code>/<code>let</code>, template strings, <code>closest</code>;</li>
+        <li><strong>APIs do navegador</strong> — Intersection Observer, matchMedia, localStorage.</li>
       </ul>
 
       <h3>Jekyll</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Layouts e Includes:</strong> como reaproveitar código com <code>{% include %}</code> e <code>{% layout %}</code>.</li>
-        <li><strong>Front Matter:</strong> metadados que controlam o layout da página.</li>
-        <li><strong>Filtros:</strong> <code>relative_url</code>, <code>absolute_url</code>, <code>date</code>, <code>where</code>.</li>
-        <li><strong>Dados estruturados:</strong> arquivos em <code>_data/</code> para gerenciar conteúdo de forma centralizada.</li>
-        <li><strong>Permalinks:</strong> URLs amigáveis para SEO.</li>
+      <ul class="diario-lista">
+        <li><strong>Layouts e includes</strong> — reaproveitar navbar/footer com include de arquivo (<code>navbar.html</code>) e definir o template no front matter (<code>layout: default</code>), não com uma tag <code>layout</code>;</li>
+        <li><strong>Front matter</strong> — <code>title</code>, <code>description</code>, <code>permalink</code> por página;</li>
+        <li><strong>Filtros</strong> — <code>relative_url</code>, <code>absolute_url</code>, <code>date</code>;</li>
+        <li><strong>_data/</strong> — conteúdo centralizado (ex.: medalhas em YAML);</li>
+        <li><strong>Permalinks</strong> — URLs sem <code>.html</code>;</li>
+        <li><strong>Liquid vs. texto</strong> — exemplo de tag precisa de <code>raw</code>, senão a build do Pages cai.</li>
       </ul>
 
-      <h3>SEO e Acessibilidade</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>JSON-LD:</strong> como estruturar dados para que os mecanismos de busca entendam o conteúdo.</li>
-        <li><strong>Open Graph:</strong> metadados para compartilhamento em redes sociais.</li>
-        <li><strong>ARIA:</strong> atributos para melhorar a experiência de usuários de leitores de tela.</li>
-        <li><strong>Contraste:</strong> a importância de verificar com ferramentas como Lighthouse.</li>
-        <li><strong>Focus management:</strong> garantir que o foco do teclado seja visível.</li>
+      <h3>SEO e acessibilidade</h3>
+      <ul class="diario-lista">
+        <li>JSON-LD com tipos que existem de fato no schema.org;</li>
+        <li>Open Graph com imagem 1200×630, não a foto de perfil crua;</li>
+        <li>ARIA só onde o HTML semântico não basta;</li>
+        <li>Contraste medido, não “achado”;</li>
+        <li>Foco visível no teclado.</li>
       </ul>
 
       <h3>Design e UX</h3>
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Hierarquia visual:</strong> usar tamanhos, pesos e espaçamento para guiar o usuário.</li>
-        <li><strong>Microinterações:</strong> pequenos detalhes que fazem grande diferença na experiência.</li>
-        <li><strong>Consistência:</strong> manter cores, espaçamentos e tipografia consistentes em todas as páginas.</li>
-        <li><strong>Animações com propósito:</strong> animações devem guiar, não distrair.</li>
+      <ul class="diario-lista">
+        <li>Hierarquia visual (tamanho, peso, espaço);</li>
+        <li>Microinteração com propósito;</li>
+        <li>Consistência de token (cor, raio, tipografia);</li>
+        <li>Animação guia — não compete com o conteúdo.</li>
       </ul>
 
-      <!-- ============================================================
-           STATUS
-           ============================================================ -->
-      <h2 id="status" style="margin-top: 3rem;">📊 Status Atual e Próximos Passos</h2>
-
+      <h2 id="status" class="diario-bloco">Status atual e próximos passos</h2>
       <p>
-        O site está <strong>ativo e em constante aperfeiçoamento</strong>. Atualmente, estou trabalhando em:
+        O site está <strong>no ar e em aperfeiçoamento</strong>. Na fila:
       </p>
-
-      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--color-text-muted);">
-        <li><strong>Aprimorar a experiência do usuário</strong> — microinterações adicionais, como efeito de "ripple" em botões;</li>
-        <li><strong>Otimizar imagens</strong> — converter todas para WebP e reduzir tamanhos;</li>
-        <li><strong>Expandir a seção de projetos</strong> — adicionar novos projetos conforme forem desenvolvidos;</li>
-        <li><strong>Refinar a acessibilidade</strong> — testar com leitores de tela (NVDA, VoiceOver);</li>
-        <li><strong>Adicionar blog</strong> — transformar as publicações em artigos completos com paginação;</li>
-        <li><strong>Melhorar o desempenho</strong> — usar <code>defer</code> e <code>async</code> para scripts, reduzir CSS não utilizado;</li>
-        <li><strong>Adicionar modo de impressão</strong> — para que o currículo seja imprimível de forma limpa.</li>
+      <ul class="diario-lista">
+        <li>Comprimir e converter imagens (perfil, capas de projeto, posts PNG);</li>
+        <li>Sitemap gerado pelo plugin, sem URLs <code>.html</code> mortas;</li>
+        <li>Toggle de tema visível, com anti-flash no <code>&lt;head&gt;</code>;</li>
+        <li>Novos projetos conforme saírem da bancada;</li>
+        <li>Testar com NVDA e VoiceOver;</li>
+        <li>Publicações como artigos no próprio site (e feed RSS de verdade);</li>
+        <li>CSS de impressão para o currículo;</li>
+        <li>Enxugar menu e páginas que repetem a mesma bio.</li>
       </ul>
-
       <p>
-        A lista de melhorias é longa, mas estou satisfeito com o resultado atual. Cada linha de código foi escrita com cuidado, cada animação foi ajustada com intenção. Este site é um reflexo do meu processo de aprendizado e da minha paixão por tecnologia.
+        A lista de melhorias é longa. Cada linha daqui foi escrita com a intenção de registrar o processo — inclusive os erros, como o Liquid sem escape que impediu o GitHub Pages de publicar esta página na primeira tentativa.
       </p>
 
-      <!-- ============================================================
-           LINKS
-           ============================================================ -->
-      <h2 style="margin-top: 3rem;">🔗 Links</h2>
-
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
-        <a href="https://github.com/Kelvinsaldanha/portfolio" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Ver no GitHub</a>
-        <a href="{{ '/' | relative_url }}" class="btn btn--secondary">Visitar o site</a>
+      <h2 class="diario-bloco">Links</h2>
+      <div class="diario-acoes">
+        <a
+          href="https://github.com/kelvinsaldanha/portfolio"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--primary"
+        >Ver no GitHub</a>
+        <a href="{{ '/' | relative_url }}" class="btn btn--secondary">Ir para a home</a>
       </div>
 
     </div>
-
   </div>
 </section>
