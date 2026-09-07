@@ -2595,3 +2595,99 @@ html, body {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* =============================================
+   CARROSSEL PARA POSTS
+   ============================================= */
+.carrossel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--color-surface-light);
+}
+
+.carrossel-slides {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carrossel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.carrossel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* CONTADOR */
+.carrossel-contador {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(4px);
+    z-index: 5;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* BOTÕES DE NAVEGAÇÃO */
+.carrossel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s;
+    z-index: 10;
+    opacity: 0.8;
+}
+
+.carrossel-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.carrossel-btn-esquerda {
+    left: 8px;
+}
+
+.carrossel-btn-direita {
+    right: 8px;
+}
+
+/* Em dispositivos touch, esconder setas (opcional) */
+@media (hover: none) {
+    .carrossel-btn {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.4);
+    }
+}
