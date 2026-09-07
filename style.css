@@ -2548,3 +2548,15 @@ html.is-loaded body {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md); /* ou um box-shadow personalizado */
 }
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.section--surface {
+  background: var(--color-surface);
+}
