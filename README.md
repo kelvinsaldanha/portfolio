@@ -79,3 +79,83 @@ A organização dos arquivos foi pensada para ser **modular**, **fácil de naveg
 ├── Gemfile                # Dependências Ruby
 ├── Gemfile.lock           # Versões travadas das dependências
 └── README.md              # Documentação do projeto
+
+
+🛠️ Como Customizar
+O projeto foi construído para que alterações de dados básicos não exijam conhecimento profundo de código. Siga os passos abaixo:
+
+1. Configurações Globais
+No início do arquivo script.js, existe um objeto SITE_CONFIG. Altere-o para atualizar seu nome, links sociais e ano atual em todo o site automaticamente.
+
+javascript
+const SITE_CONFIG = {
+    name: "Kelvin Saldanha Mateus",
+    github: "https://github.com/Kelvinsaldanha",
+    linkedin: "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
+    email: "kelvinsaldanhaa@gmail.com",
+    currentYear: 2026
+};
+2. Cores e Identidade Visual
+As cores do site (ambos os temas) podem ser alteradas no topo do arquivo style.css, dentro da seção :root e [data-theme="light"].
+
+css
+:root {
+    --color-background: #0a0e1a;  /* Fundo escuro */
+    --color-surface: #111827;     /* Superfícies (cards) */
+    --color-text: #f1f5f9;        /* Texto principal */
+    /* ... */
+}
+3. Conteúdo (Textos e Imagens)
+Textos: Devem ser editados diretamente nos arquivos .html correspondentes.
+
+Fotos: Para trocar a foto de perfil, basta substituir o arquivo em images/profile/ ou alterar o caminho no HTML.
+
+Novos Projetos/Publicações: Basta copiar um bloco existente de <article> (ex: projeto-card ou post-card), colar abaixo e atualizar as informações de imagem e texto.
+
+4. Dados Estruturados (Conquistas)
+As medalhas e conquistas são gerenciadas no arquivo _data/conquistas.yml. Para adicionar uma nova:
+
+yaml
+- title: "OIMSF — Diamante Nacional"
+  year: 2026
+  type: "diamante"    # opções: ouro, prata, bronze, diamante, honra
+  description: "Olimpíada Internacional de Matemática Sem Fronteiras"
+  image: "oimsf-diamante-nacional-2026.jpeg"
+📦 Implantação (Deployment)
+O site é 100% estático e pode ser hospedado gratuitamente no GitHub Pages:
+
+Opção A: Repositório seu-usuario.github.io
+Crie um repositório chamado seu-usuario.github.io.
+
+Suba todos os arquivos da pasta raiz para o repositório.
+
+O site estará disponível automaticamente no endereço https://seu-usuario.github.io.
+
+Opção B: Repositório com subpasta (ex: /portfolio)
+Crie um repositório chamado portfolio.
+
+Suba os arquivos para o repositório.
+
+No GitHub, vá em Settings > Pages e selecione a branch main e a pasta raiz.
+
+O site ficará disponível em https://seu-usuario.github.io/portfolio.
+
+Dica: Se você usar Jekyll localmente, execute bundle install e bundle exec jekyll serve para testar antes de publicar.
+
+🤝 Contribuição
+Contribuições são bem-vindas! Se você encontrar um bug, tiver uma sugestão de melhoria ou quiser adicionar uma nova funcionalidade, sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+Antes de contribuir, verifique se:
+
+O código segue o estilo existente (indentação, comentários, etc.).
+
+As mudanças não quebram a funcionalidade existente.
+
+A documentação foi atualizada quando necessário.
+
+📄 Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+Autor: Kelvin Saldanha Mateus
+Status do Projeto: Ativo/Atualizado
+Última atualização: 2026
