@@ -33,17 +33,35 @@ description: "Publicações de Kelvin Saldanha Mateus — Registros, estudos e p
 
         <div class="publicacoes-grid" id="publicacoes-grid">
 
-            <!-- POST - VISITA TÉCNICA HOSPITAL RISOLETA TOLENTINO NEVES -->
+         <!-- POST - VISITA TÉCNICA HOSPITAL RISOLETA TOLENTINO NEVES (COM CARROSSEL) -->
             <article class="post-card">
-                <div class="post-card__image-wrapper">
-                    <img
-                        src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-na-visita-ao-hospital-risoleta-neves.jpg' | relative_url }}"
-                        alt="Kelvin Saldanha Mateus na visita técnica ao Hospital Risoleta Tolentino Neves"
-                        class="post-card__image"
-                        loading="lazy"
-                        decoding="async"
-                    >
-                </div>
+                <div class="post-card__image-wrapper" style="position: relative;">
+            
+                    <!-- ===== CARROSSEL ===== -->
+                    <div class="carrossel-container" id="carrossel-risoleta">
+                        <div class="carrossel-slides">
+                            <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-na-visita-ao-hospital-risoleta-neves.jpg' | relative_url }}" alt="Kelvin Saldanha na entrada do Hospital Risoleta Tolentino Neves" class="carrossel-slide active" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/sala-com-equipamentos.jpg' | relative_url }}" alt="Sala com equipamentos hospitalares" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-na-visita-ao-hospital-risoleta-neves-2.jpg' | relative_url }}" alt="Kelvin Saldanha em outro momento" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/incubadora.jpg' | relative_url }}" alt="Incubadora neonatal" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-ao-lado-de-suas-colegas-durante-a-visita-ao-hospital-risoleta-neves.jpg' | relative_url }}" alt="Kelvin com colegas" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/autoclaves.jpg' | relative_url }}" alt="Autoclaves na CME" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-ao-lado-de-suas-colegas-durante-a-visita-ao-hospital-risoleta-neves-2.jpg' | relative_url }}" alt="Kelvin e colegas" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/aparelho-de-tomografia-computadorizada.jpg' | relative_url }}" alt="Tomógrafo" class="carrossel-slide" loading="lazy">
+                            <img src="{{ '/images/posts/Risoleta_Neves/aparelho-de-raio-x.jpg' | relative_url }}" alt="Raio-X" class="carrossel-slide" loading="lazy">
+                        </div>
+            
+                        <!-- CONTADOR (canto superior direito) -->
+                        <span class="carrossel-contador" id="contador-risoleta">1 / 9</span>
+            
+                        <!-- SETAS -->
+                        <button class="carrossel-btn carrossel-btn-esquerda" data-carrossel="risoleta">&#10094;</button>
+                        <button class="carrossel-btn carrossel-btn-direita" data-carrossel="risoleta">&#10095;</button>
+                    </div>
+                    <!-- ===== FIM CARROSSEL ===== -->
+            
+                </div><!-- .post-card__image-wrapper -->
+            
                 <div class="post-card__content">
                     <div class="post-card__meta">
                         <span class="post-card__category">Visita técnica</span>
@@ -55,30 +73,9 @@ description: "Publicações de Kelvin Saldanha Mateus — Registros, estudos e p
                     <p class="post-card__summary">
                         No dia 27 de agosto, visitei o Hospital Risoleta Tolentino Neves, em Belo Horizonte, acompanhado pela instrutora Ana Clara Armanelli, ex-aluna do CEFET-MG. A visita permitiu conhecer de perto a rotina dos técnicos em equipamentos biomédicos e observar equipamentos como monitores multiparamétricos, bombas de infusão, hemodiálise, incubadoras, berços aquecidos, raio-X, tomógrafos, ventiladores, cardioversores, bisturis, focos cirúrgicos e aparelhos de anestesia, além de setores como bloco cirúrgico, UTI neonatal, imagenologia e CME. Ver esses equipamentos onde realmente são utilizados trouxe uma visão muito mais concreta da profissão.
                     </p>
-            
-                   
-                    <!-- GALERIA DE 9 FOTOS (pasta Risoleta_Neves) -->
-                <div class="galeria-post">
-                    <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-na-visita-ao-hospital-risoleta-neves.jpg' | relative_url }}" alt="Kelvin Saldanha na entrada do Hospital Risoleta Tolentino Neves durante visita técnica" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/sala-com-equipamentos.jpg' | relative_url }}" alt="Sala com equipamentos hospitalares durante a visita técnica ao Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-na-visita-ao-hospital-risoleta-neves-2.jpg' | relative_url }}" alt="Kelvin Saldanha em outro momento da visita ao Hospital Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/incubadora.jpg' | relative_url }}" alt="Incubadora neonatal vista durante a visita ao Hospital Risoleta Tolentino Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-ao-lado-de-suas-colegas-durante-a-visita-ao-hospital-risoleta-neves.jpg' | relative_url }}" alt="Kelvin Saldanha ao lado de colegas durante a visita ao Hospital Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/autoclaves.jpg' | relative_url }}" alt="Autoclaves na Central de Material e Esterilização (CME) do Hospital Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/kelvin-saldanha-mateus-ao-lado-de-suas-colegas-durante-a-visita-ao-hospital-risoleta-neves-2.jpg' | relative_url }}" alt="Kelvin Saldanha e colegas em mais um registro da visita ao Hospital Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/aparelho-de-tomografia-computadorizada.jpg' | relative_url }}" alt="Aparelho de tomografia computadorizada no setor de imagenologia do Hospital Risoleta Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                    <img src="{{ '/images/posts/Risoleta_Neves/aparelho-de-raio-x.jpg' | relative_url }}" alt="Aparelho de raio-X visto durante a visita técnica ao Hospital Risoleta Tolentino Neves" loading="lazy" style="border-radius: 4px; width: 100%; aspect-ratio: 1/1; object-fit: cover;">
-                </div>
-                  
-            
-              <!--       <a
-                        href="https://www.linkedin.com/posts/kelvin-saldanha-mateus_visita-t%C3%A9cnica-ao-hospital-risoleta-tolentino-activity-UGCPLACEHOLDER" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="post-card__link"
-                    >
+               <!--     <a href="https://www.linkedin.com/posts/kelvin-saldanha-mateus_visita-t%C3%A9cnica-ao-hospital-risoleta-tolentino-activity-UGCPLACEHOLDER" target="_blank" rel="noopener noreferrer" class="post-card__link">
                         Ler publicação completa no LinkedIn →
-                    </a>     -->
+                    </a>  -->
                 </div>
             </article>
 
