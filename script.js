@@ -513,7 +513,7 @@ allFadeElements.forEach((el, index) => {
 });
 
 // ============================================
-// CARROSSEL PARA POSTS
+// CARROSSEL COM LIGHTBOX E LEGENDA
 // ============================================
 document.querySelectorAll('.carrossel-container').forEach(container => {
     const slides = container.querySelectorAll('.carrossel-slide');
@@ -537,12 +537,62 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
         atualizarCarrossel();
     }
 
-    if (btnEsq) btnEsq.addEventListener('click', () => irPara(-1));
-    if (btnDir) btnDir.addEventListener('click', () => irPara(1));
+    // Evento de clique na imagem ativa → abre lightbox
+    function abrirLightboxCarrossel() {
+        const slideAtivo = container.querySelector('.carrossel-slide.active');
+        if (!slideAtivo) return;
+
+        // Pega a URL e a legenda
+        const src = slideAtivo.getAttribute('src');
+        const legenda = slideAtivo.getAttribute('data-legenda') || slideAtivo.getAttribute('alt') || 'Imagem';
+
+        // Usa o lightbox existente (função já definida no seu script)
+        if (typeof abrirLightbox === 'function') {
+            // Cria um array com apenas esta imagem para o lightbox
+            const item = { src: src, legenda: legenda };
+            // A função original espera um índice e uma lista de elementos
+            // Vamos adaptar: criar um elemento temporário com src e legenda
+            const imgElement = document.createElement('img');
+            imgElement.src = src;
+            imgElement.alt = legenda;
+            imgElement.setAttribute('data-legenda', legenda);
+            // Substitui a lista global de imagens do lightbox temporariamente
+            // Ou você pode chamar a função diretamente com o índice 0
+            // Vou usar a função já existente, mas precisamos que ela aceite um índice
+            // Se a função original for algo como abrirLightbox(index), faremos:
+            // window.abrirLightbox(0) mas precisamos que a lista tenha só essa imagem
+            // Para simplificar, vou reimplementar uma abertura rápida:
+            const lightbox = document.getElementById('lightbox');
+            const imagem = document.getElementById('lightbox-imagem');
+            const legendaEl = document.getElementById('lightbox-legenda');
+            const contadorEl = document.getElementById('lightbox-contador');
+            if (lightbox && imagem) {
+                imagem.src = src;
+                imagem.alt = legenda;
+                if (legendaEl) legendaEl.textContent = legenda;
+                if (contadorEl) contadorEl.textContent = '1 / 1';
+                lightbox.classList.add('lightbox--ativo');
+                document.body.style.overflow = 'hidden';
+            }
+        } else {
+            // Fallback: se a função não existir, abre em nova aba
+            window.open(src, '_blank');
+        }
+    }
+
+    // Adiciona evento de clique na área do carrossel (delegação)
+    container.addEventListener('click', (e) => {
+        // Se clicou em uma seta ou contador, ignora
+        if (e.target.closest('.carrossel-btn') || e.target.closest('.carrossel-contador')) return;
+        abrirLightboxCarrossel();
+    });
+
+    // Teclado: setas e ESC já estão no lightbox global
+    // Para navegar entre as fotos do carrossel, as setas já funcionam
+
+    if (btnEsq) btnEsq.addEventListener('click', (e) => { e.stopPropagation(); irPara(-1); });
+    if (btnDir) btnDir.addEventListener('click', (e) => { e.stopPropagation(); irPara(1); });
 
     // Inicializa
     atualizarCarrossel();
-
-    // (Opcional) Auto-play a cada 5 segundos, se quiser
-    // setInterval(() => irPara(1), 5000);
 });
