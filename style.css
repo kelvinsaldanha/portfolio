@@ -496,8 +496,7 @@ p {
         position: fixed;
 
         top: 0;
-        right: -100%;
-
+        right: 0;            /* 🔧 Sempre fixo à direita */
         width: min(320px, 80vw);
         height: 100vh;
 
@@ -515,7 +514,9 @@ p {
 
         gap: 0.5rem;
 
-        transition: right var(--transition-slow);
+        /* 🔧 Usar transform para esconder/mostrar (não gera overflow) */
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
 
         z-index: 150;
 
@@ -525,7 +526,7 @@ p {
     }
 
     .nav__menu.active {
-        right: 0;
+        transform: translateX(0); /* 🔧 Mostra o menu */
     }
 
     .nav__item {
@@ -546,8 +547,6 @@ p {
         align-self: flex-start;
     }
 }
-
-
 /* =============================================
    11. HERO
    ============================================= */
@@ -2560,3 +2559,9 @@ html.is-loaded body {
 .section--surface {
   background: var(--color-surface);
 }
+
+html, body {
+    overflow-x: hidden;
+    overflow-x: clip;  /* para navegadores modernos */
+}
+
