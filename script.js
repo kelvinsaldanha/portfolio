@@ -513,7 +513,7 @@ allFadeElements.forEach((el, index) => {
 });
 
 // ============================================
-// CARROSSEL COM LIGHTBOX E LEGENDA
+// CARROSSEL COM LIGHTBOX E LEGENDA (CORRIGIDO)
 // ============================================
 document.querySelectorAll('.carrossel-container').forEach(container => {
     const slides = container.querySelectorAll('.carrossel-slide');
@@ -537,61 +537,107 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
         atualizarCarrossel();
     }
 
-    // Evento de clique na imagem ativa → abre lightbox
-    function abrirLightboxCarrossel() {
+    // ===== ABRIR LIGHTBOX COM A IMAGEM ATIVA =====
+    function abrirLightboxComImagemAtiva() {
         const slideAtivo = container.querySelector('.carrossel-slide.active');
         if (!slideAtivo) return;
 
-        // Pega a URL e a legenda
         const src = slideAtivo.getAttribute('src');
         const legenda = slideAtivo.getAttribute('data-legenda') || slideAtivo.getAttribute('alt') || 'Imagem';
 
-        // Usa o lightbox existente (função já definida no seu script)
-        if (typeof abrirLightbox === 'function') {
-            // Cria um array com apenas esta imagem para o lightbox
-            const item = { src: src, legenda: legenda };
-            // A função original espera um índice e uma lista de elementos
-            // Vamos adaptar: criar um elemento temporário com src e legenda
-            const imgElement = document.createElement('img');
-            imgElement.src = src;
-            imgElement.alt = legenda;
-            imgElement.setAttribute('data-legenda', legenda);
-            // Substitui a lista global de imagens do lightbox temporariamente
-            // Ou você pode chamar a função diretamente com o índice 0
-            // Vou usar a função já existente, mas precisamos que ela aceite um índice
-            // Se a função original for algo como abrirLightbox(index), faremos:
-            // window.abrirLightbox(0) mas precisamos que a lista tenha só essa imagem
-            // Para simplificar, vou reimplementar uma abertura rápida:
-            const lightbox = document.getElementById('lightbox');
-            const imagem = document.getElementById('lightbox-imagem');
-            const legendaEl = document.getElementById('lightbox-legenda');
-            const contadorEl = document.getElementById('lightbox-contador');
-            if (lightbox && imagem) {
-                imagem.src = src;
-                imagem.alt = legenda;
-                if (legendaEl) legendaEl.textContent = legenda;
-                if (contadorEl) contadorEl.textContent = '1 / 1';
-                lightbox.classList.add('lightbox--ativo');
-                document.body.style.overflow = 'hidden';
-            }
+        // Usa o lightbox existente (procura por uma função global)
+        // Se houver uma função como 'openLightbox' ou 'abrirLightbox', use-a.
+        if (typeof window.abrirLightbox === 'function') {
+            // A função espera um índice ou uma URL? Vamos passar a URL.
+            window.abrirLightbox(src, legenda);
         } else {
-            // Fallback: se a função não existir, abre em nova aba
-            window.open(src, '_blank');
+            // Fallback: cria um lightbox simples na hora
+            criarLightboxSimples(src, legenda);
         }
     }
 
-    // Adiciona evento de clique na área do carrossel (delegação)
-    container.addEventListener('click', (e) => {
+    // ===== CRIA UM LIGHTBOX SIMPLES (FALLBACK) =====
+    function criarLightboxSimples(src, legenda) {
+        // Verifica se já existe um lightbox
+        let lightbox = document.getElementById('lightbox-custom');
+        if (!lightbox) {
+            lightbox = document.createElement('div');
+            lightbox.id = 'lightbox-custom';
+            lightbox.style.position = 'fixed';
+            lightbox.style.top = '0';
+            lightbox.style.left = '0';
+            lightbox.style.width = '100%';
+            lightbox.style.height = '100%';
+            lightbox.style.background = 'rgba(0,0,0,0.9)';
+            lightbox.style.display = 'flex';
+            lightbox.style.alignItems = 'center';
+            lightbox.style.justifyContent = 'center';
+            lightbox.style.zIndex = '9999';
+            lightbox.style.cursor = 'pointer';
+            lightbox.style.flexDirection = 'column';
+
+            const img = document.createElement('img');
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '80%';
+            img.style.borderRadius = '8px';
+            img.style.boxShadow = '0 0 30px rgba(0,0,0,0.8)';
+            img.id = 'lightbox-custom-img';
+            lightbox.appendChild(img);
+
+            const leg = document.createElement('p');
+            leg.style.color = '#fff';
+            leg.style.marginTop = '1rem';
+            leg.style.fontSize = '1.1rem';
+            leg.style.textAlign = 'center';
+            leg.id = 'lightbox-custom-legenda';
+            lightbox.appendChild(leg);
+
+            document.body.appendChild(lightbox);
+
+            lightbox.addEventListener('click', function() {
+                this.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+
+            // Tecla ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.style.display !== 'none') {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            });
+        }
+
+        const imgEl = document.getElementById('lightbox-custom-img');
+        const legEl = document.getElementById('lightbox-custom-legenda');
+        if (imgEl) {
+            imgEl.src = src;
+            imgEl.alt = legenda;
+        }
+        if (legEl) {
+            legEl.textContent = legenda;
+        }
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // ===== EVENTO DE CLIQUE PARA ABRIR LIGHTBOX =====
+    container.addEventListener('click', function(e) {
         // Se clicou em uma seta ou contador, ignora
         if (e.target.closest('.carrossel-btn') || e.target.closest('.carrossel-contador')) return;
-        abrirLightboxCarrossel();
+        e.preventDefault(); // Impede qualquer comportamento padrão
+        abrirLightboxComImagemAtiva();
     });
 
-    // Teclado: setas e ESC já estão no lightbox global
-    // Para navegar entre as fotos do carrossel, as setas já funcionam
-
-    if (btnEsq) btnEsq.addEventListener('click', (e) => { e.stopPropagation(); irPara(-1); });
-    if (btnDir) btnDir.addEventListener('click', (e) => { e.stopPropagation(); irPara(1); });
+    // ===== EVENTOS DAS SETAS =====
+    if (btnEsq) btnEsq.addEventListener('click', function(e) {
+        e.stopPropagation();
+        irPara(-1);
+    });
+    if (btnDir) btnDir.addEventListener('click', function(e) {
+        e.stopPropagation();
+        irPara(1);
+    });
 
     // Inicializa
     atualizarCarrossel();
