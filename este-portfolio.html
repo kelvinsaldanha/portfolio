@@ -263,8 +263,9 @@ permalink: /sobre/
       layout: "default"
       author: "Kelvin Saldanha"
       lang: "pt-BR"</code></pre>
-      <p>
-        Atenção: em páginas Jekyll, qualquer <code>{% raw %}{% … %}{% endraw %}</code> ou <code>{% raw %}{{ … }}{% endraw %}</code> é executado na build. Exemplos de código precisam ir dentro de <code>{% raw %}{% raw %} … {% endraw %}{% endraw %}</code>, senão o GitHub Pages recusa o deploy — foi exatamente o que aconteceu com a primeira versão desta página.
+           <p>
+        Atenção: em páginas Jekyll, qualquer trecho com chaves e porcentagem ou com chaves duplas é executado na build. Exemplos de Liquid no texto precisam usar entidades HTML
+        (<code>&amp;#123;%</code> e <code>%&amp;#125;</code>, ou <code>&amp;#123;&amp;#123;</code>) — nunca um bloco raw dentro de outro bloco raw, senão a build do GitHub Pages cai. Foi isso que derrubou a primeira versão desta página.
       </p>
 
       <h2 id="fase-3" class="diario-bloco">Fase 3: modo escuro e personalização</h2>
@@ -580,8 +581,8 @@ window.addEventListener('pageshow', () => {
       </p>
 
       <h3>9. Build do GitHub Pages recusando esta página</h3>
-      <p>
-        Documentar Liquid com <code>{% raw %}{% include %}{% endraw %}</code> e <code>{% raw %}{% layout %}{% endraw %}</code> soltos faz o Jekyll tentar executar as tags. <code>include</code> sem arquivo quebra a build; <code>layout</code> nem é tag. Solução: <code>{% raw %}{% raw %} … {% endraw %}{% endraw %}</code> em todo exemplo, e nunca usar <code>layout</code> como tag.
+            <p>
+        Colocar no HTML um exemplo cru da tag include, ou inventar uma tag layout, faz o Jekyll tentar executar o código. Include sem nome de arquivo quebra a build; layout nem é tag — é chave do front matter (<code>layout: default</code>). A solução é escapar o exemplo com entidades HTML, e nunca aninhar raw dentro de raw.
       </p>
 
       <h2 id="aprendizados" class="diario-bloco">O que aprendi</h2>
