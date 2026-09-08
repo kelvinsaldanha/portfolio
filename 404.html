@@ -1,386 +1,83 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+---
+layout: default
+permalink: /404.html
+title: "Página não encontrada | Kelvin Saldanha"
+description: "A página que você procura não foi encontrada no portfólio de Kelvin Saldanha."
+---
 
-    <title>Página não encontrada | Kelvin Saldanha</title>
+<main id="conteudo-principal">
 
-    <meta
-        name="description"
-        content="A página que você procura não foi encontrada no portfólio de Kelvin Saldanha."
-    >
-
-    <!-- Página de erro não deve ser indexada -->
-    <meta name="robots" content="noindex, follow">
-
-    <meta name="theme-color" content="#0a0e1a">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Página não encontrada | Kelvin Saldanha">
-    <meta
-        property="og:description"
-        content="A página que você procura não foi encontrada."
-    >
-    <meta property="og:url" content="https://kelvinsaldanha.github.io/">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-    <!-- Fontes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <!-- CSS principal -->
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-    <a href="#conteudo-principal" class="skip-link">
-        Pular para o conteúdo principal
-    </a>
-
-    <!-- ==========================================
-         HEADER
-         ========================================== -->
-    <header class="header">
-        <div class="container header__container">
-
-            <a
-                href="./"
-                class="header__logo"
-                aria-label="Kelvin Saldanha - Início"
-            >
-                Kelvin Saldanha
-            </a>
-
-            <nav class="nav" aria-label="Navegação principal">
-
-                <button
-                    class="nav__toggle"
-                    id="nav-toggle"
-                    aria-expanded="false"
-                    aria-controls="nav-menu"
-                    aria-label="Abrir menu"
-                >
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                    <span class="nav__toggle-bar"></span>
-                </button>
-
-                <ul class="nav__menu" id="nav-menu">
-
-                    <li class="nav__item">
-                        <a href="./" class="nav__link">
-                            Home
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="sobre/" class="nav__link">
-                            Sobre
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="projetos/" class="nav__link">
-                            Projetos
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="experiencias/" class="nav__link">
-                            Experiências
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="formacao/" class="nav__link">
-                            Formação
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="publicacoes/" class="nav__link">
-                            Publicações
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="conquistas/" class="nav__link">
-                            Conquistas
-                        </a>
-                    </li>
-
-                    <li class="nav__item">
-                        <a href="contato/" class="nav__link">
-                            Contato
-                        </a>
-                    </li>
-
-           <!--          <li class="nav__item nav__item--darkmode">
-                        <button
-                            class="darkmode-toggle"
-                            id="darkmode-toggle"
-                            aria-label="Alternar modo escuro"
-                        >
-                            🌙
-                        </button>
-                    </li>              -->
-
-                </ul>
-            </nav>
-
+  <!-- ==========================================
+       404
+       ========================================== -->
+  <section class="error-page">
+    <div class="container">
+      <div class="error-page__content">
+        <div class="error-page__code" aria-hidden="true">404</div>
+        <div class="error-page__divider"></div>
+        <p class="error-page__overline">Página não encontrada</p>
+        <h1 class="error-page__title">Parece que você chegou a um lugar que não existe.</h1>
+        <p class="error-page__description">
+          A página que você está procurando pode ter sido removida, movida ou o endereço pode ter sido digitado incorretamente.
+        </p>
+        <div class="error-page__actions">
+          <a href="{{ '/' | relative_url }}" class="btn btn--primary">← Voltar para o início</a>
+          <a href="{{ '/projetos/' | relative_url }}" class="btn btn--secondary">Explorar projetos →</a>
         </div>
-    </header>
-
-
-    <!-- ==========================================
-         CONTEÚDO PRINCIPAL
-         ========================================== -->
-    <main id="conteudo-principal">
-
-        <section class="error-page">
-
-            <div class="container">
-
-                <div class="error-page__content">
-
-                    <div class="error-page__code" aria-hidden="true">
-                        404
-                    </div>
-
-                    <div class="error-page__divider"></div>
-
-                    <p class="error-page__overline">
-                        Página não encontrada
-                    </p>
-
-                    <h1 class="error-page__title">
-                        Parece que você chegou a um lugar que não existe.
-                    </h1>
-
-                    <p class="error-page__description">
-                        A página que você está procurando pode ter sido
-                        removida, movida ou o endereço pode ter sido
-                        digitado incorretamente.
-                    </p>
-
-                    <div class="error-page__actions">
-
-                        <a
-                            href="./"
-                            class="btn btn--primary"
-                        >
-                            ← Voltar para o início
-                        </a>
-
-                        <a
-                            href="projetos/"
-                            class="btn btn--secondary"
-                        >
-                            Explorar projetos →
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ==========================================
-             LINKS ÚTEIS
-             ========================================== -->
-        <section class="error-links section">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <p class="hero__overline">
-                        Continue explorando
-                    </p>
-
-                    <h2>
-                        Talvez você esteja procurando por...
-                    </h2>
-
-                    <p class="section-subtitle">
-                        Acesse diretamente outras áreas do meu portfólio.
-                    </p>
-
-                </div>
-
-
-                <div class="error-links__grid">
-
-                    <a
-                        href="sobre/"
-                        class="error-link-card"
-                    >
-                        <span class="error-link-card__icon">
-                            👤
-                        </span>
-
-                        <span class="error-link-card__content">
-                            <strong>Sobre</strong>
-                            <small>
-                                Conheça minha trajetória e áreas de interesse.
-                            </small>
-                        </span>
-
-                        <span class="error-link-card__arrow">
-                            →
-                        </span>
-                    </a>
-
-
-                    <a
-                        href="projetos/"
-                        class="error-link-card"
-                    >
-                        <span class="error-link-card__icon">
-                            ⚙️
-                        </span>
-
-                        <span class="error-link-card__content">
-                            <strong>Projetos</strong>
-                            <small>
-                                Veja os projetos que estou desenvolvendo.
-                            </small>
-                        </span>
-
-                        <span class="error-link-card__arrow">
-                            →
-                        </span>
-                    </a>
-
-
-                    <a
-                        href="conquistas/"
-                        class="error-link-card"
-                    >
-                        <span class="error-link-card__icon">
-                            🏆
-                        </span>
-
-                        <span class="error-link-card__content">
-                            <strong>Conquistas</strong>
-                            <small>
-                                Medalhas, reconhecimentos e certificados.
-                            </small>
-                        </span>
-
-                        <span class="error-link-card__arrow">
-                            →
-                        </span>
-                    </a>
-
-
-                    <a
-                        href="publicacoes/"
-                        class="error-link-card"
-                    >
-                        <span class="error-link-card__icon">
-                            ✍️
-                        </span>
-
-                        <span class="error-link-card__content">
-                            <strong>Publicações</strong>
-                            <small>
-                                Artigos e conteúdos técnicos publicados.
-                            </small>
-                        </span>
-
-                        <span class="error-link-card__arrow">
-                            →
-                        </span>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- ==========================================
-         FOOTER
-         ========================================== -->
-    <footer class="footer">
-
-        <div class="container footer__container">
-
-            <span class="footer__name">
-                Kelvin Saldanha
-            </span>
-
-            <span class="footer__desc">
-                Equipamentos Biomédicos · Tecnologia · Projetos
-            </span>
-
-            <div class="footer__links">
-
-                <a
-                    href="https://www.linkedin.com/in/kelvin-saldanha-mateus/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="footer__link"
-                >
-                    LinkedIn
-                </a>
-
-                <a
-                    href="https://github.com/Kelvinsaldanha"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="footer__link"
-                >
-                    GitHub
-                </a>
-
-                <a
-                    href="mailto:kelvinsaldanhaa@gmail.com"
-                    class="footer__link"
-                >
-                    E-mail
-                </a>
-
-            </div>
-
-            <p class="footer__copyright">
-                © <span id="ano-atual">2026</span>
-                Kelvin Saldanha
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- Botão voltar ao topo -->
-    <button
-        class="back-to-top"
-        id="back-to-top"
-        aria-label="Voltar ao topo"
-    >
-        ↑
-    </button>
-
-
-    <!-- JavaScript principal -->
-    <script src="script.js"></script>
-
-</body>
-</html>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       LINKS ÚTEIS
+       ========================================== -->
+  <section class="error-links section">
+    <div class="container">
+      <div class="section-header">
+        <p class="hero__overline">Continue explorando</p>
+        <h2>Talvez você esteja procurando por...</h2>
+        <p class="section-subtitle">Acesse diretamente outras áreas do meu portfólio.</p>
+      </div>
+      <div class="error-links__grid">
+
+        <a href="{{ '/sobre/' | relative_url }}" class="error-link-card">
+          <span class="error-link-card__icon">👤</span>
+          <span class="error-link-card__content">
+            <strong>Sobre</strong>
+            <small>Conheça minha trajetória e áreas de interesse.</small>
+          </span>
+          <span class="error-link-card__arrow">→</span>
+        </a>
+
+        <a href="{{ '/projetos/' | relative_url }}" class="error-link-card">
+          <span class="error-link-card__icon">⚙️</span>
+          <span class="error-link-card__content">
+            <strong>Projetos</strong>
+            <small>Veja os projetos que estou desenvolvendo.</small>
+          </span>
+          <span class="error-link-card__arrow">→</span>
+        </a>
+
+        <a href="{{ '/conquistas/' | relative_url }}" class="error-link-card">
+          <span class="error-link-card__icon">🏆</span>
+          <span class="error-link-card__content">
+            <strong>Conquistas</strong>
+            <small>Medalhas, reconhecimentos e certificados.</small>
+          </span>
+          <span class="error-link-card__arrow">→</span>
+        </a>
+
+        <a href="{{ '/publicacoes/' | relative_url }}" class="error-link-card">
+          <span class="error-link-card__icon">✍️</span>
+          <span class="error-link-card__content">
+            <strong>Publicações</strong>
+            <small>Artigos e conteúdos técnicos publicados.</small>
+          </span>
+          <span class="error-link-card__arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
