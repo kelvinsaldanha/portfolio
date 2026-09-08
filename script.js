@@ -292,20 +292,10 @@ function configurarLinksFooter() {
 configurarLinksFooter();
 
 /* =============================================
-   LIGHTBOX GENÉRICO (funciona em todas as páginas)
+   LIGHTBOX GENÉRICO (com suporte a lista customizada)
    ============================================= */
 (function() {
-
-    // Seleciona todas as imagens que devem abrir o lightbox
-    const imagens = document.querySelectorAll(
-        '.post-card__image, .figura-card img'
-    );
-
-    // Filtra apenas as que têm src válido
-    const itens = Array.from(imagens).filter(img => img.src && !img.src.includes('undefined'));
-
-    if (itens.length === 0) return;
-
+    // Elementos do lightbox
     const lightbox = document.getElementById('lightbox');
     const imagem = document.getElementById('lightbox-imagem');
     const legenda = document.getElementById('lightbox-legenda');
@@ -314,34 +304,27 @@ configurarLinksFooter();
     const anterior = document.getElementById('lightbox-anterior');
     const proximo = document.getElementById('lightbox-proximo');
 
+    // Lista global padrão (imagens dos posts e figuras)
+    let itens = [];
     let indiceAtual = 0;
 
+    // Função para atualizar a lista de itens (pode ser chamada pelo carrossel)
+    function definirItens(novaLista) {
+        itens = novaLista;
+        indiceAtual = 0;
+        // Se a lista for vazia, não faz nada
+    }
+
     function abrirLightbox(index) {
+        if (!itens || itens.length === 0) return;
         if (index < 0) index = itens.length - 1;
         if (index >= itens.length) index = 0;
 
         indiceAtual = index;
-        const img = itens[indiceAtual];
-        imagem.src = img.src;
-        imagem.alt = img.alt || '';
-
-        // Tenta pegar a legenda
-        let legendaTexto = img.getAttribute('data-legenda') || img.alt || '';
-        
-        // Se for figura-card, pega a legenda do elemento irmão
-        const card = img.closest('.figura-card');
-        if (card) {
-            const legElem = card.querySelector('.figura-card__legenda');
-            if (legElem) legendaTexto = legElem.textContent.trim();
-        }
-        // Se for post-card, pega o título do post
-        const postCard = img.closest('.post-card');
-        if (postCard) {
-            const titulo = postCard.querySelector('.post-card__title');
-            if (titulo) legendaTexto = titulo.textContent.trim();
-        }
-
-        legenda.textContent = legendaTexto || 'Imagem';
+        const item = itens[indiceAtual];
+        imagem.src = item.src;
+        imagem.alt = item.alt || '';
+        legenda.textContent = item.legenda || item.alt || 'Imagem';
         contador.textContent = `${indiceAtual + 1} / ${itens.length}`;
 
         lightbox.classList.add('lightbox--ativo');
@@ -351,32 +334,36 @@ configurarLinksFooter();
     function fecharLightbox() {
         lightbox.classList.remove('lightbox--ativo');
         document.body.style.overflow = '';
+        // Restaura a lista padrão (opcional, mas bom para evitar conflitos)
+        // Se quiser, pode restaurar a lista de imagens da página, mas não é necessário.
     }
 
     function navegar(delta) {
         abrirLightbox(indiceAtual + delta);
     }
 
-    // Adiciona evento de clique em cada imagem
-    itens.forEach((img, idx) => {
-        img.addEventListener('click', function(e) {
-            e.preventDefault();
-            abrirLightbox(idx);
-        });
-        img.style.cursor = 'pointer';
-    });
+    // === Configuração da lista padrão ===
+    function configurarListaPadrao() {
+        const imagens = document.querySelectorAll('.post-card__image, .figura-card img');
+        const lista = Array.from(imagens)
+            .filter(img => img.src && !img.src.includes('undefined'))
+            .map(img => ({
+                src: img.src,
+                alt: img.alt || '',
+                legenda: img.getAttribute('data-legenda') || img.alt || ''
+            }));
+        itens = lista;
+        // Se houver itens, o primeiro será usado como fallback, mas não abrimos automaticamente.
+    }
 
-    // Eventos dos controles
+    // === Eventos dos controles ===
     fechar.addEventListener('click', fecharLightbox);
     anterior.addEventListener('click', (e) => { e.stopPropagation(); navegar(-1); });
     proximo.addEventListener('click', (e) => { e.stopPropagation(); navegar(1); });
-
-    // Fechar ao clicar no fundo
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) fecharLightbox();
     });
 
-    // Teclado
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('lightbox--ativo')) return;
         if (e.key === 'Escape') fecharLightbox();
@@ -384,6 +371,36 @@ configurarLinksFooter();
         if (e.key === 'ArrowRight') navegar(1);
     });
 
+    // === Inicialização ===
+    configurarListaPadrao();
+
+    // === Expor funções para serem usadas pelo carrossel ===
+    window.__lightbox = {
+        abrir: abrirLightbox,
+        definirItens: definirItens,
+        fechar: fecharLightbox
+    };
+
+    // Também mantemos o clique automático nas imagens padrão (para posts normais)
+    document.querySelectorAll('.post-card__image, .figura-card img').forEach((img, idx) => {
+        // Só adiciona se não estiver dentro de um carrossel (para evitar duplicidade)
+        if (!img.closest('.carrossel-container')) {
+            img.addEventListener('click', function(e) {
+                e.preventDefault();
+                // Configura a lista padrão novamente (caso tenha sido modificada)
+                configurarListaPadrao();
+                // Encontra o índice correto na lista
+                const index = itens.findIndex(item => item.src === this.src);
+                if (index !== -1) {
+                    abrirLightbox(index);
+                } else {
+                    // fallback: usa o primeiro item
+                    abrirLightbox(0);
+                }
+            });
+            img.style.cursor = 'pointer';
+        }
+    });
 })();
 
 // ============================================
