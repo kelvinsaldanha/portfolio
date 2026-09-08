@@ -537,107 +537,58 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
         atualizarCarrossel();
     }
 
-    // ===== ABRIR LIGHTBOX COM A IMAGEM ATIVA =====
-    function abrirLightboxComImagemAtiva() {
+    // ===== ABRIR LIGHTBOX =====
+    function abrirLightboxCarrossel() {
         const slideAtivo = container.querySelector('.carrossel-slide.active');
         if (!slideAtivo) return;
 
         const src = slideAtivo.getAttribute('src');
         const legenda = slideAtivo.getAttribute('data-legenda') || slideAtivo.getAttribute('alt') || 'Imagem';
 
-        // Usa o lightbox existente (procura por uma função global)
-        // Se houver uma função como 'openLightbox' ou 'abrirLightbox', use-a.
-        if (typeof window.abrirLightbox === 'function') {
-            // A função espera um índice ou uma URL? Vamos passar a URL.
-            window.abrirLightbox(src, legenda);
+        // Usa o lightbox que já existe no HTML
+        const lightbox = document.getElementById('lightbox');
+        const imagem = document.getElementById('lightbox-imagem');
+        const legendaEl = document.getElementById('lightbox-legenda');
+        const contadorEl = document.getElementById('lightbox-contador');
+
+        if (lightbox && imagem) {
+            imagem.src = src;
+            imagem.alt = legenda;
+            if (legendaEl) legendaEl.textContent = legenda;
+            if (contadorEl) contadorEl.textContent = ''; // não mostra contador no lightbox, só a legenda
+            lightbox.classList.add('lightbox--ativo');
+            document.body.style.overflow = 'hidden';
         } else {
-            // Fallback: cria um lightbox simples na hora
-            criarLightboxSimples(src, legenda);
+            // Fallback seguro: se o lightbox não existir, não faz nada
+            console.warn('Lightbox não encontrado.');
         }
     }
 
-    // ===== CRIA UM LIGHTBOX SIMPLES (FALLBACK) =====
-    function criarLightboxSimples(src, legenda) {
-        // Verifica se já existe um lightbox
-        let lightbox = document.getElementById('lightbox-custom');
-        if (!lightbox) {
-            lightbox = document.createElement('div');
-            lightbox.id = 'lightbox-custom';
-            lightbox.style.position = 'fixed';
-            lightbox.style.top = '0';
-            lightbox.style.left = '0';
-            lightbox.style.width = '100%';
-            lightbox.style.height = '100%';
-            lightbox.style.background = 'rgba(0,0,0,0.9)';
-            lightbox.style.display = 'flex';
-            lightbox.style.alignItems = 'center';
-            lightbox.style.justifyContent = 'center';
-            lightbox.style.zIndex = '9999';
-            lightbox.style.cursor = 'pointer';
-            lightbox.style.flexDirection = 'column';
-
-            const img = document.createElement('img');
-            img.style.maxWidth = '90%';
-            img.style.maxHeight = '80%';
-            img.style.borderRadius = '8px';
-            img.style.boxShadow = '0 0 30px rgba(0,0,0,0.8)';
-            img.id = 'lightbox-custom-img';
-            lightbox.appendChild(img);
-
-            const leg = document.createElement('p');
-            leg.style.color = '#fff';
-            leg.style.marginTop = '1rem';
-            leg.style.fontSize = '1.1rem';
-            leg.style.textAlign = 'center';
-            leg.id = 'lightbox-custom-legenda';
-            lightbox.appendChild(leg);
-
-            document.body.appendChild(lightbox);
-
-            lightbox.addEventListener('click', function() {
-                this.style.display = 'none';
-                document.body.style.overflow = '';
-            });
-
-            // Tecla ESC
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && lightbox.style.display !== 'none') {
-                    lightbox.style.display = 'none';
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-
-        const imgEl = document.getElementById('lightbox-custom-img');
-        const legEl = document.getElementById('lightbox-custom-legenda');
-        if (imgEl) {
-            imgEl.src = src;
-            imgEl.alt = legenda;
-        }
-        if (legEl) {
-            legEl.textContent = legenda;
-        }
-        lightbox.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-    }
-
-    // ===== EVENTO DE CLIQUE PARA ABRIR LIGHTBOX =====
-    container.addEventListener('click', function(e) {
-        // Se clicou em uma seta ou contador, ignora
+    // ===== EVENTO DE CLIQUE NA IMAGEM ATIVA =====
+    container.addEventListener('click', (e) => {
+        // Ignora cliques nas setas e no contador
         if (e.target.closest('.carrossel-btn') || e.target.closest('.carrossel-contador')) return;
-        e.preventDefault(); // Impede qualquer comportamento padrão
-        abrirLightboxComImagemAtiva();
+        // Se clicou na imagem (ou no container), abre o lightbox
+        if (e.target.closest('.carrossel-slide')) {
+            e.preventDefault();
+            e.stopPropagation();
+            abrirLightboxCarrossel();
+        }
     });
 
-    // ===== EVENTOS DAS SETAS =====
-    if (btnEsq) btnEsq.addEventListener('click', function(e) {
-        e.stopPropagation();
-        irPara(-1);
-    });
-    if (btnDir) btnDir.addEventListener('click', function(e) {
-        e.stopPropagation();
-        irPara(1);
-    });
+    // ===== SETAS =====
+    if (btnEsq) {
+        btnEsq.addEventListener('click', (e) => {
+            e.stopPropagation();
+            irPara(-1);
+        });
+    }
+    if (btnDir) {
+        btnDir.addEventListener('click', (e) => {
+            e.stopPropagation();
+            irPara(1);
+        });
+    }
 
     // Inicializa
     atualizarCarrossel();
