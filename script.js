@@ -530,7 +530,7 @@ allFadeElements.forEach((el, index) => {
 });
 
 // ============================================
-// CARROSSEL COM LIGHTBOX E LEGENDA (CORRIGIDO)
+// CARROSSEL COM LIGHTBOX E LEGENDA (usando lightbox global)
 // ============================================
 document.querySelectorAll('.carrossel-container').forEach(container => {
     const slides = container.querySelectorAll('.carrossel-slide');
@@ -554,38 +554,35 @@ document.querySelectorAll('.carrossel-container').forEach(container => {
         atualizarCarrossel();
     }
 
-    // ===== ABRIR LIGHTBOX =====
+    // ===== ABRIR LIGHTBOX COM LISTA DO CARROSSEL =====
     function abrirLightboxCarrossel() {
-        const slideAtivo = container.querySelector('.carrossel-slide.active');
-        if (!slideAtivo) return;
+        // Cria a lista de imagens do carrossel
+        const listaCarrossel = [];
+        slides.forEach(slide => {
+            const src = slide.getAttribute('src');
+            const alt = slide.getAttribute('alt') || '';
+            const legenda = slide.getAttribute('data-legenda') || alt;
+            if (src && !src.includes('undefined')) {
+                listaCarrossel.push({ src, alt, legenda });
+            }
+        });
 
-        const src = slideAtivo.getAttribute('src');
-        const legenda = slideAtivo.getAttribute('data-legenda') || slideAtivo.getAttribute('alt') || 'Imagem';
+        if (listaCarrossel.length === 0) return;
 
-        // Usa o lightbox que já existe no HTML
-        const lightbox = document.getElementById('lightbox');
-        const imagem = document.getElementById('lightbox-imagem');
-        const legendaEl = document.getElementById('lightbox-legenda');
-        const contadorEl = document.getElementById('lightbox-contador');
-
-        if (lightbox && imagem) {
-            imagem.src = src;
-            imagem.alt = legenda;
-            if (legendaEl) legendaEl.textContent = legenda;
-            if (contadorEl) contadorEl.textContent = ''; // não mostra contador no lightbox, só a legenda
-            lightbox.classList.add('lightbox--ativo');
-            document.body.style.overflow = 'hidden';
+        // Usa a função exposta pelo lightbox
+        if (window.__lightbox && window.__lightbox.definirItens) {
+            window.__lightbox.definirItens(listaCarrossel);
+            // Abre na posição correspondente à imagem ativa
+            const indexAtivo = index; // usa o índice do carrossel (0-based)
+            window.__lightbox.abrir(indexAtivo);
         } else {
-            // Fallback seguro: se o lightbox não existir, não faz nada
-            console.warn('Lightbox não encontrado.');
+            console.warn('Lightbox não disponível');
         }
     }
 
     // ===== EVENTO DE CLIQUE NA IMAGEM ATIVA =====
     container.addEventListener('click', (e) => {
-        // Ignora cliques nas setas e no contador
         if (e.target.closest('.carrossel-btn') || e.target.closest('.carrossel-contador')) return;
-        // Se clicou na imagem (ou no container), abre o lightbox
         if (e.target.closest('.carrossel-slide')) {
             e.preventDefault();
             e.stopPropagation();
