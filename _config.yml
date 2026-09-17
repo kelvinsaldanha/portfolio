@@ -62,12 +62,6 @@ defaults:
       author: "Kelvin Saldanha"
       lang: "pt-BR"
 
-  - scope:
-      type: "pages"
-    values:
-      layout: "default"
-      permalink: /:basename/
-
 
 # ================================================================
 # FEED
