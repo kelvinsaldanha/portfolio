@@ -176,7 +176,7 @@ h1 {
 }
 
 h2 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
 }
@@ -189,17 +189,6 @@ h3 {
 p {
     margin-bottom: 1rem;
     color: var(--color-text-muted);
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: clamp(1.75rem, 8vw, 2.25rem);
-        line-height: 1.15;
-    }
-
-    h2 {
-        font-size: clamp(1.4rem, 6vw, 1.85rem);
-    }
 }
 
 
@@ -552,81 +541,11 @@ p {
 
 /* =============================================
    10. MENU MOBILE
+   (estrutura base desktop omitida — ativa só em 768px)
    ============================================= */
 
-@media (max-width: 768px) {
-    :root {
-        --header-height: 60px;
-        --section-padding: 3rem 0;
-    }
-
-    .nav__toggle {
-        display: flex;
-    }
-
-    .nav__menu {
-        position: fixed;
-
-        top: 0;
-        right: 0;
-
-        width: min(
-            340px,
-            calc(86vw - var(--safe-right))
-        );
-        height: 100vh;
-        height: 100dvh;
-
-        background: var(--color-background);
-
-        border-left: 1px solid var(--color-border);
-
-        flex-direction: column;
-        align-items: flex-start;
-
-        padding:
-            calc(
-                var(--header-height)
-                + 1rem
-                + var(--safe-top)
-            )
-            calc(1.5rem + var(--safe-right))
-            calc(2rem + var(--safe-bottom))
-            1.5rem;
-
-        gap: 0.5rem;
-
-        transform: translateX(100%);
-        transition: transform var(--transition-slow);
-
-        z-index: 150;
-
-        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
-
-        overflow-y: auto;
-    }
-
-    .nav__menu.active {
-        transform: translateX(0);
-    }
-
-    .nav__item {
-        width: 100%;
-    }
-
-    .nav__link {
-        padding: 0.8rem 0;
-        font-size: 1.1rem;
-    }
-
-    .nav__link.active::after {
-        display: none;
-    }
-
-    .nav__item--darkmode {
-        margin-top: 1rem;
-        align-self: flex-start;
-    }
+.nav__toggle {
+    display: none;
 }
 
 
@@ -654,6 +573,7 @@ p {
 
 .hero__content {
     flex: 1;
+    min-width: 0;
 }
 
 .hero__overline {
@@ -749,40 +669,7 @@ p {
 
 
 /* =============================================
-   12. HERO RESPONSIVO
-   ============================================= */
-
-@media (max-width: 768px) {
-    .hero__container {
-        flex-direction: column-reverse;
-        text-align: center;
-        gap: 1.5rem;
-    }
-
-    .hero__content {
-        text-align: center;
-    }
-
-    .hero__actions {
-        justify-content: center;
-    }
-
-    .hero__image-wrapper {
-        flex: 0 0 clamp(160px, 42vw, 200px);
-        width: clamp(160px, 42vw, 200px);
-        height: clamp(160px, 42vw, 200px);
-        margin: 0 auto;
-    }
-
-    .hero__description {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-/* =============================================
-   13. CARDS (base)
+   12. CARDS (base)
    ============================================= */
 
 .card {
@@ -811,7 +698,7 @@ p {
 
 
 /* =============================================
-   14. HOME
+   13. HOME
    ============================================= */
 
 .home-projetos {
@@ -890,7 +777,7 @@ p {
 
 
 /* =============================================
-   15. SOBRE
+   14. SOBRE
    ============================================= */
 
 .sobre-content {
@@ -942,7 +829,7 @@ p {
 
 
 /* =============================================
-   16. PROJETOS
+   15. PROJETOS
    ============================================= */
 
 .projetos-grid {
@@ -1119,7 +1006,7 @@ p {
 
 
 /* =============================================
-   17. EXPERIÊNCIAS / TIMELINE
+   16. EXPERIÊNCIAS / TIMELINE
    ============================================= */
 
 .timeline {
@@ -1197,25 +1084,9 @@ p {
     margin-bottom: 0;
 }
 
-@media (max-width: 480px) {
-    .timeline {
-        padding-left: 1.25rem;
-    }
-
-    .timeline__marker {
-        left: -1.65rem;
-        width: 10px;
-        height: 10px;
-    }
-
-    .timeline__content {
-        padding: 1rem;
-    }
-}
-
 
 /* =============================================
-   18. FORMAÇÃO
+   17. FORMAÇÃO
    ============================================= */
 
 .formacao-card {
@@ -1287,7 +1158,7 @@ p {
 
 
 /* =============================================
-   19. PUBLICAÇÕES
+   18. PUBLICAÇÕES
    ============================================= */
 
 .publicacoes-grid {
@@ -1427,7 +1298,7 @@ p {
 
 
 /* =============================================
-   20. CONTATO
+   19. CONTATO
    ============================================= */
 
 .contato-container {
@@ -1489,7 +1360,7 @@ p {
 
 
 /* =============================================
-   21. CONQUISTAS
+   20. CONQUISTAS
    ============================================= */
 
 .conquistas-grid {
@@ -1652,16 +1523,9 @@ p {
         0 8px 24px rgba(59, 130, 246, 0.30);
 }
 
-@media (max-width: 640px) {
-    .conquistas-grid,
-    .certificados-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* =============================================
-   22. CERTIFICADOS
+   21. CERTIFICADOS
    ============================================= */
 
 .certificados-grid {
@@ -1743,7 +1607,7 @@ p {
 
 
 /* =============================================
-   23. FOOTER
+   22. FOOTER
    ============================================= */
 
 .footer {
@@ -1809,6 +1673,11 @@ p {
     text-decoration: none;
 
     transition: color var(--transition);
+
+    padding: 0.5rem 0.25rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
 }
 
 .footer__link:hover {
@@ -1825,7 +1694,7 @@ p {
 
 
 /* =============================================
-   24. BOTÃO VOLTAR AO TOPO
+   23. BOTÃO VOLTAR AO TOPO
    ============================================= */
 
 .back-to-top {
@@ -1877,17 +1746,9 @@ p {
     background: var(--color-secondary);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .back-to-top {
-        transition:
-            opacity 0.01ms,
-            visibility 0.01ms;
-    }
-}
-
 
 /* =============================================
-   25. ANIMAÇÕES
+   24. ANIMAÇÕES
    ============================================= */
 
 .fade-in {
@@ -1906,17 +1767,9 @@ p {
     transform: translateY(0);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .fade-in {
-        opacity: 1;
-        transform: none;
-        transition: none;
-    }
-}
-
 
 /* =============================================
-   26. ACESSIBILIDADE
+   25. ACESSIBILIDADE
    ============================================= */
 
 .skip-link {
@@ -1960,78 +1813,7 @@ p {
 
 
 /* =============================================
-   27. REDUÇÃO DE MOVIMENTO
-   ============================================= */
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.01ms !important;
-
-        scroll-behavior: auto !important;
-    }
-}
-
-
-/* =============================================
-   28. RESPONSIVIDADE — MOBILE
-   ============================================= */
-
-@media (max-width: 768px) {
-    .projetos-grid,
-    .home-projetos,
-    .home-areas,
-    .publicacoes-grid,
-    .competencias-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contato-canal {
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        gap: 0.5rem;
-    }
-}
-
-
-/* =============================================
-   29. RESPONSIVIDADE — CELULAR PEQUENO
-   ============================================= */
-
-@media (max-width: 430px) {
-    .btn {
-        padding: 0.7rem 1.2rem;
-
-        font-size: 0.9rem;
-    }
-
-    .conquista-card {
-        padding: 1.5rem 1rem;
-    }
-
-    .formacao-card {
-        padding: 1.5rem;
-    }
-
-    .back-to-top {
-        bottom: calc(1.25rem + var(--safe-bottom));
-        right: calc(1.25rem + var(--safe-right));
-
-        width: 42px;
-        height: 42px;
-    }
-}
-
-
-/* =============================================
-   30. PÁGINA 404
+   26. PÁGINA 404
    ============================================= */
 
 .error-page {
@@ -2177,7 +1959,7 @@ p {
 
 
 /* =============================================
-   31. PÁGINA 404 — LINKS ÚTEIS
+   27. PÁGINA 404 — LINKS ÚTEIS
    ============================================= */
 
 .error-links {
@@ -2298,76 +2080,7 @@ p {
 
 
 /* =============================================
-   32. PÁGINA 404 — MOBILE
-   ============================================= */
-
-@media (max-width: 768px) {
-    .error-page {
-        min-height: auto;
-
-        padding:
-            calc(5rem + var(--safe-top))
-            0
-            calc(4rem + var(--safe-bottom));
-    }
-
-    .error-page__code {
-        font-size: clamp(6rem, 28vw, 9rem);
-    }
-
-    .error-page__title {
-        font-size: 1.8rem;
-    }
-
-    .error-page__description {
-        font-size: 1rem;
-    }
-
-    .error-links__grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 430px) {
-    .error-page {
-        padding:
-            calc(4rem + var(--safe-top))
-            0
-            calc(3rem + var(--safe-bottom));
-    }
-
-    .error-page__code {
-        font-size: 6rem;
-    }
-
-    .error-page__title {
-        font-size: 1.55rem;
-    }
-
-    .error-page__description {
-        font-size: 0.95rem;
-        line-height: 1.7;
-    }
-
-    .error-page__actions {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .error-page__actions .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .error-link-card {
-        padding: 1rem;
-    }
-}
-
-
-/* =============================================
-   33. HABILIDADES
+   28. HABILIDADES
    ============================================= */
 
 .habilidades-grid {
@@ -2414,22 +2127,9 @@ p {
     color: var(--color-text);
 }
 
-@media (max-width: 600px) {
-    .habilidades-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-}
-
-@media (max-width: 380px) {
-    .habilidades-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* =============================================
-   34. TABELAS RESPONSIVAS
+   29. TABELAS RESPONSIVAS
    ============================================= */
 
 .table-scroll {
@@ -2447,22 +2147,15 @@ p {
 
 
 /* =============================================
-   35. MATERIAIS E GALERIA
+   30. MATERIAIS E GALERIA
    ============================================= */
 
 .materiais-grid,
 .galeria-figuras {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0.6rem;
+    gap: 0.75rem;
     margin: 1rem 0 1.5rem;
-}
-
-@media (max-width: 480px) {
-    .materiais-grid,
-    .galeria-figuras {
-        grid-template-columns: 1fr;
-    }
 }
 
 .figura-card {
@@ -2525,7 +2218,7 @@ p {
 
 
 /* =============================================
-   36. GALERIA DE IMAGENS NOS POSTS
+   31. GALERIA DE IMAGENS NOS POSTS
    ============================================= */
 
 .galeria-post {
@@ -2542,21 +2235,9 @@ p {
     object-fit: cover;
 }
 
-@media (max-width: 600px) {
-    .galeria-post {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 400px) {
-    .galeria-post {
-        grid-template-columns: 1fr;
-    }
-}
-
 
 /* =============================================
-   37. CARROSSEL PARA POSTS
+   32. CARROSSEL PARA POSTS
    ============================================= */
 
 .carrossel-container {
@@ -2596,7 +2277,7 @@ p {
     right: calc(16px + var(--safe-right));
     background: rgba(0, 0, 0, 0.6);
     color: #fff;
-    padding: 0.2rem 0.8rem;
+    padding: 0.25rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
@@ -2624,7 +2305,7 @@ p {
     backdrop-filter: blur(4px);
     transition: background 0.2s;
     z-index: 10;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .carrossel-btn:hover {
@@ -2640,16 +2321,9 @@ p {
     right: 8px;
 }
 
-@media (hover: none) {
-    .carrossel-btn {
-        opacity: 1;
-        background: rgba(0, 0, 0, 0.4);
-    }
-}
-
 
 /* =============================================
-   38. LIGHTBOX
+   33. LIGHTBOX
    ============================================= */
 
 .lightbox {
@@ -2686,7 +2360,7 @@ p {
 .lightbox__container {
     position: relative;
     max-width: 98vw;
-    max-height: 98vh;
+    max-height: 98dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2699,16 +2373,16 @@ p {
     align-items: center;
     justify-content: center;
     width: 96vw;
-    height: 92vh;
+    height: 88dvh;
     max-width: 96vw;
-    max-height: 92vh;
+    max-height: 88dvh;
 }
 
 .lightbox__imagem {
     width: 100%;
     height: 100%;
     max-width: 96vw;
-    max-height: 92vh;
+    max-height: 88dvh;
     object-fit: contain;
     border-radius: var(--border-radius-lg);
     box-shadow: 0 16px 48px rgba(0, 0, 0, 0.8);
@@ -2717,11 +2391,11 @@ p {
 }
 
 .lightbox__legenda {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     font-size: 1rem;
     color: #eee;
     text-align: center;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1.25rem;
     background: rgba(0, 0, 0, 0.6);
     border-radius: 999px;
     backdrop-filter: blur(4px);
@@ -2765,7 +2439,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 1.75rem;
     cursor: pointer;
     backdrop-filter: blur(4px);
     transition: background 0.2s, transform 0.2s;
@@ -2789,8 +2463,8 @@ p {
 .lightbox__fechar {
     position: absolute;
     top: calc(16px + var(--safe-top));
-    right: calc(30px + var(--safe-right));
-    font-size: 2.8rem;
+    right: calc(20px + var(--safe-right));
+    font-size: 2.5rem;
     color: #fff;
     cursor: pointer;
     background: none;
@@ -2799,6 +2473,12 @@ p {
     z-index: 20;
     line-height: 1;
     opacity: 0.9;
+    padding: 0.25rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lightbox__fechar:hover {
@@ -2806,48 +2486,9 @@ p {
     opacity: 1;
 }
 
-@media (max-width: 600px) {
-    .lightbox__nav {
-        width: 44px;
-        height: 44px;
-        font-size: 1.5rem;
-    }
-
-    .lightbox__fechar {
-        top: calc(10px + var(--safe-top));
-        right: calc(15px + var(--safe-right));
-        font-size: 2.2rem;
-    }
-
-    .lightbox__imagem-wrapper {
-        width: 98vw;
-        height: calc(85dvh - var(--safe-top) - var(--safe-bottom));
-        max-width: 98vw;
-        max-height: calc(85dvh - var(--safe-top) - var(--safe-bottom));
-    }
-
-    .lightbox__imagem {
-        max-width: 98vw;
-        max-height: calc(85dvh - var(--safe-top) - var(--safe-bottom));
-    }
-
-    .lightbox__legenda {
-        font-size: 0.85rem;
-        max-width: 92vw;
-        margin-top: 0.8rem;
-    }
-
-    .lightbox__contador {
-        top: calc(10px + var(--safe-top));
-        left: calc(10px + var(--safe-left));
-        font-size: 0.75rem;
-        padding: 0.15rem 0.6rem;
-    }
-}
-
 
 /* =============================================
-   39. TRANSIÇÃO DE PÁGINA
+   34. TRANSIÇÃO DE PÁGINA
    ============================================= */
 
 body {
@@ -2870,7 +2511,7 @@ html.is-loaded body {
 
 
 /* =============================================
-   40. SCROLL PROGRESS BAR
+   35. SCROLL PROGRESS BAR
    ============================================= */
 
 .scroll-progress {
@@ -2887,7 +2528,7 @@ html.is-loaded body {
 
 
 /* =============================================
-   41. HOVER EM CARDS (touch-safe)
+   36. HOVER EM CARDS (desktop)
    ============================================= */
 
 .projeto-card,
@@ -2915,7 +2556,423 @@ html.is-loaded body {
     box-shadow: var(--shadow-md);
 }
 
+
+/* =============================================
+   37. RESPONSIVIDADE — TABLET / MOBILE (≤768px)
+   ============================================= */
+
+@media (max-width: 768px) {
+
+    :root {
+        --header-height: 60px;
+        --section-padding: 2.5rem 0;
+    }
+
+    /* ---------- Navbar mobile ---------- */
+    .nav__toggle {
+        display: flex;
+    }
+
+    .nav__menu {
+        position: fixed;
+
+        top: 0;
+        right: 0;
+
+        width: min(
+            340px,
+            calc(86vw - var(--safe-right))
+        );
+        height: 100vh;
+        height: 100dvh;
+
+        background: var(--color-background);
+
+        border-left: 1px solid var(--color-border);
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding:
+            calc(
+                var(--header-height)
+                + 1rem
+                + var(--safe-top)
+            )
+            calc(1.5rem + var(--safe-right))
+            calc(2rem + var(--safe-bottom))
+            1.5rem;
+
+        gap: 0.25rem;
+
+        transform: translateX(100%);
+        transition: transform var(--transition-slow);
+
+        z-index: 150;
+
+        box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+
+        overflow-y: auto;
+    }
+
+    .nav__menu.active {
+        transform: translateX(0);
+    }
+
+    .nav__item {
+        width: 100%;
+    }
+
+    .nav__link {
+        padding: 0.85rem 0;
+        font-size: 1.05rem;
+    }
+
+    .nav__link.active::after {
+        display: none;
+    }
+
+    .nav__item--darkmode {
+        margin-top: 1rem;
+        align-self: flex-start;
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        padding: 2rem 0 2.5rem;
+    }
+
+    .hero__container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .hero__content {
+        text-align: center;
+    }
+
+    .hero__overline {
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .hero__title {
+        margin-bottom: 0.4rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.05rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero__description {
+        font-size: 0.98rem;
+        margin-bottom: 1.5rem;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 480px;
+    }
+
+    .hero__actions {
+        justify-content: center;
+        gap: 0.75rem;
+    }
+
+    .hero__image-wrapper {
+        flex: 0 0 clamp(140px, 38vw, 180px);
+        width: clamp(140px, 38vw, 180px);
+        height: clamp(140px, 38vw, 180px);
+        margin: 0 auto;
+    }
+
+    /* ---------- Section header ---------- */
+    .section-header {
+        margin: 0 auto 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* ---------- Sobre ---------- */
+    .sobre-content p {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    /* ---------- Contato ---------- */
+    .contato-canal {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    /* ---------- Grids ---------- */
+    .projetos-grid,
+    .home-projetos,
+    .home-areas,
+    .publicacoes-grid,
+    .competencias-grid,
+    .conquistas-grid,
+    .certificados-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- 404 ---------- */
+    .error-page {
+        min-height: auto;
+        padding:
+            calc(4rem + var(--safe-top))
+            0
+            calc(3rem + var(--safe-bottom));
+    }
+
+    .error-page__code {
+        font-size: clamp(5.5rem, 24vw, 8rem);
+    }
+
+    .error-page__title {
+        font-size: 1.65rem;
+    }
+
+    .error-page__description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .error-links {
+        padding: 2.5rem 0;
+    }
+
+    .error-links__grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- Formação ---------- */
+    .formacao-card {
+        padding: 1.5rem;
+    }
+
+    /* ---------- Footer ---------- */
+    .footer {
+        padding:
+            2rem
+            0
+            calc(1.5rem + var(--safe-bottom));
+    }
+}
+
+
+/* =============================================
+   38. RESPONSIVIDADE — CELULAR (≤480px)
+   ============================================= */
+
+@media (max-width: 480px) {
+
+    /* ---------- Tipografia ---------- */
+    h1 {
+        font-size: clamp(1.7rem, 8vw, 2.15rem);
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 6vw, 1.75rem);
+        margin-bottom: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* ---------- Botões ---------- */
+    .btn {
+        padding: 0.7rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* ---------- Cards ---------- */
+    .conquista-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .projeto-card__content,
+    .post-card__content {
+        padding: 1.25rem;
+    }
+
+    .certificado-card__content {
+        padding: 1rem;
+    }
+
+    /* ---------- Timeline ---------- */
+    .timeline {
+        padding-left: 1.25rem;
+    }
+
+    .timeline__marker {
+        left: -1.55rem;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline__content {
+        padding: 1.15rem;
+    }
+
+    /* ---------- Materiais / Galeria ---------- */
+    .materiais-grid,
+    .galeria-figuras {
+        grid-template-columns: 1fr;
+    }
+
+    /* ---------- Habilidades ---------- */
+    .habilidades-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.85rem;
+    }
+
+    /* ---------- Galeria de posts ---------- */
+    .galeria-post {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ---------- Back to top ---------- */
+    .back-to-top {
+        bottom: calc(1.25rem + var(--safe-bottom));
+        right: calc(1.25rem + var(--safe-right));
+        width: 42px;
+        height: 42px;
+    }
+
+    /* ---------- Lightbox ---------- */
+    .lightbox__nav {
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+    }
+
+    .lightbox__nav--esquerda {
+        left: calc(8px + var(--safe-left));
+    }
+
+    .lightbox__nav--direita {
+        right: calc(8px + var(--safe-right));
+    }
+
+    .lightbox__fechar {
+        top: calc(8px + var(--safe-top));
+        right: calc(12px + var(--safe-right));
+        font-size: 2rem;
+    }
+
+    .lightbox__imagem-wrapper {
+        width: calc(100vw - 1.5rem);
+        height: calc(75dvh - var(--safe-top) - var(--safe-bottom));
+        max-width: calc(100vw - 1.5rem);
+        max-height: calc(75dvh - var(--safe-top) - var(--safe-bottom));
+    }
+
+    .lightbox__imagem {
+        max-width: calc(100vw - 1.5rem);
+        max-height: calc(75dvh - var(--safe-top) - var(--safe-bottom));
+    }
+
+    .lightbox__legenda {
+        font-size: 0.82rem;
+        max-width: 92vw;
+        margin-top: 0.75rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .lightbox__contador {
+        top: calc(8px + var(--safe-top));
+        left: calc(10px + var(--safe-left));
+        font-size: 0.72rem;
+        padding: 0.15rem 0.55rem;
+    }
+}
+
+
+/* =============================================
+   39. RESPONSIVIDADE — CELULAR PEQUENO (≤380px)
+   ============================================= */
+
+@media (max-width: 380px) {
+
+    .hero {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .hero__image-wrapper {
+        flex: 0 0 clamp(130px, 36vw, 150px);
+        width: clamp(130px, 36vw, 150px);
+        height: clamp(130px, 36vw, 150px);
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .habilidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria-post {
+        grid-template-columns: 1fr;
+    }
+
+    .conquista-card {
+        padding: 1.25rem 1rem;
+    }
+
+    .formacao-card {
+        padding: 1.25rem;
+    }
+}
+
+
+/* =============================================
+   40. PREFERÊNCIA POR MENOS MOVIMENTO
+   ============================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+
+        scroll-behavior: auto !important;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .back-to-top {
+        transition:
+            opacity 0.01ms,
+            visibility 0.01ms;
+    }
+}
+
+
+/* =============================================
+   41. DISPOSITIVOS SEM HOVER (touch)
+   ============================================= */
+
 @media (hover: none) {
+
+    /* Cards: desativa efeitos de elevação e sombra */
     .projeto-card:hover,
     .post-card:hover,
     .certificado-card:hover,
@@ -2926,5 +2983,99 @@ html.is-loaded body {
     .habilidade-card:hover {
         transform: none;
         box-shadow: none;
+    }
+
+    /* Mantém sombra padrão dos cards com borda colorida */
+    .conquista-card--ouro:hover,
+    .conquista-card--diamante:hover,
+    .conquista-card--prata:hover,
+    .conquista-card--bronze:hover,
+    .conquista-card--honra:hover {
+        box-shadow:
+            0 0 0 1px var(--color-gold-light);
+    }
+
+    /* Botões: evita flicker de cor no tap */
+    .btn--primary:hover {
+        background-color: var(--color-primary);
+        color: #fff;
+        border-color: var(--color-primary);
+        transform: none;
+    }
+
+    .btn--secondary:hover,
+    .btn--outline:hover {
+        background: transparent;
+        color: var(--color-text);
+        border-color: var(--color-border);
+        transform: none;
+    }
+
+    /* Nav links: remove sublinhado fantasma */
+    .nav__link:hover {
+        color: var(--color-text-muted);
+    }
+
+    .nav__link:hover::after {
+        transform: scaleX(0);
+    }
+
+    /* Header logo: sem animação de gradiente no tap */
+    .header__logo:hover {
+        background-position: initial;
+    }
+
+    /* Contato: sem deslocamento */
+    .contato-canal:hover {
+        border-color: var(--color-border);
+        transform: none;
+    }
+
+    /* Back to top */
+    .back-to-top:hover {
+        background: var(--color-primary);
+    }
+
+    /* 404 cards */
+    .error-link-card:hover {
+        transform: none;
+        border-color: var(--color-border);
+        box-shadow: none;
+    }
+
+    .error-link-card:hover .error-link-card__arrow {
+        transform: none;
+    }
+
+    /* Figura card */
+    .figura-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .figura-card:hover .figura-card__imagem img {
+        transform: none;
+    }
+
+    /* Carrossel botões: sempre visíveis e com contraste */
+    .carrossel-btn {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.45);
+    }
+
+    .carrossel-btn:hover {
+        background: rgba(0, 0, 0, 0.45);
+        opacity: 1;
+    }
+
+    /* Lightbox: sem rotação no tap */
+    .lightbox__fechar:hover {
+        transform: none;
+        opacity: 0.9;
+    }
+
+    .lightbox__nav:hover {
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
     }
 }
