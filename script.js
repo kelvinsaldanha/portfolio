@@ -48,6 +48,7 @@ const canHover =
 const navToggle = $('#nav-toggle');
 const navMenu = $('#nav-menu');
 const nav = $('.nav');
+const navOverlay = $('#nav-overlay');
 
 if (navToggle && navMenu && nav) {
     let bodyOverflow = '';
@@ -66,6 +67,11 @@ if (navToggle && navMenu && nav) {
 
         navMenu.classList.toggle('active', isOpen);
         nav.classList.toggle('active', isOpen);
+
+        if (navOverlay) {
+            navOverlay.classList.toggle('active', isOpen);
+        }
+
         navToggle.setAttribute('aria-expanded', String(isOpen));
         navToggle.setAttribute(
             'aria-label',
@@ -91,11 +97,13 @@ if (navToggle && navMenu && nav) {
         }
     });
 
-    nav.addEventListener('click', (e) => {
-        if (e.target === nav && navMenu.classList.contains('active')) {
-            toggleMenu(false);
-        }
-    });
+    if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu(false);
+            }
+        });
+    }
 }
 
 /* =============================================
