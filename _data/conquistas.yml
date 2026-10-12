@@ -22,11 +22,11 @@
   description: "Olimpíada TANGRAM de Matemática"
   image: "tangram-ouro-2026.jpeg"
 
-  - title: "OBMF — Prata"
+- title: "OBMF — Prata"
   year: 2026
   type: "prata"
   description: "Olimpíada Brasileira de Matemática Financeira"
-  image: "obmf-2026.jpeg"
+  image: "obmf-prata-2026.jpeg"
 
 - title: "OCE — Bronze"
   year: 2026
