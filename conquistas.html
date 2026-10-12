@@ -452,27 +452,13 @@ permalink: /conquistas/
 
         {% endfor %}
 
-        <article class="conquista-card conquista-card--prata">
-            <div class="conquista-card__imagem">
-                <img
-                    src="{{ '/images/conquistas/obmf-prata-2026.png' | relative_url }}"
-                    alt="Medalha de prata na Olimpíada Brasileira de Matemática Financeira — 2026"
-                    loading="lazy"
-                    decoding="async"
-                    onerror="this.parentElement.classList.add('imagem-inexistente'); this.remove();"
-                >
-            </div>
-            <h3 class="conquista-card__title">OBMF — Medalha de Prata</h3>
-            <p class="conquista-card__ano">2026</p>
-            <p class="conquista-card__descricao">Medalha de prata na Olimpíada Brasileira de Matemática Financeira.</p>
-        </article>
 
     </div>
 
 </div>
 
-<!--
 </section>
+
 
 <!-- ============================================================
      CERTIFICADOS
@@ -480,38 +466,77 @@ permalink: /conquistas/
 
 <section class="section" aria-labelledby="certificados-titulo">
     <div class="container">
-        <h2 class="section__title" id="certificados-titulo">Certificados</h2>
+
+        <h2 class="section__title" id="certificados-titulo">
+            Certificados
+        </h2>
+
         <div class="certificados-grid">
+
+            <!-- CERTIFICADO OBMF -->
+
             <article class="certificado-card">
+
                 <div class="certificado-card__imagem">
-                    <img
-                        src="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-obmf.pdf' | relative_url }}"
-                        alt="Certificado de medalha de prata na OBMF — 2026"
-                        loading="lazy"
-                        decoding="async"
-                        onerror="this.parentElement.classList.add('imagem-inexistente'); this.remove();"
+                    <a
+                        class="certificado-card__documento"
+                        href="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-obmf.pdf' | relative_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Abrir certificado da OBMF em PDF"
                     >
+                        <span class="certificado-card__icone" aria-hidden="true">PDF</span>
+                        <span class="certificado-card__link">
+                            Visualizar certificado
+                        </span>
+                    </a>
                 </div>
+
                 <div class="certificado-card__content">
-                    <h3 class="certificado-card__title">Medalha de Prata na OBMF</h3>
-                    <p class="certificado-card__instituicao">Olimpíada Brasileira de Matemática Financeira</p>
+                    <h3 class="certificado-card__title">
+                        Medalha de Prata na OBMF
+                    </h3>
+
+                    <p class="certificado-card__instituicao">
+                        Olimpíada Brasileira de Matemática Financeira
+                    </p>
+
                     <p class="certificado-card__ano">2026</p>
                 </div>
-             <article class="certificado-card">
+
+            </article>
+
+            <!-- CERTIFICADO OCE -->
+
+            <article class="certificado-card">
+
                 <div class="certificado-card__imagem">
-                    <img
-                        src="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-oce.pdf' | relative_url }}"
-                        alt="Certificado de participação na OCE — 2026"
-                        loading="lazy"
-                        decoding="async"
-                        onerror="this.parentElement.classList.add('imagem-inexistente'); this.remove();"
+                    <a
+                        class="certificado-card__documento"
+                        href="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-oce.pdf' | relative_url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Abrir certificado da OCE em PDF"
                     >
+                        <span class="certificado-card__icone" aria-hidden="true">PDF</span>
+                        <span class="certificado-card__link">
+                            Visualizar certificado
+                        </span>
+                    </a>
                 </div>
+
                 <div class="certificado-card__content">
-                    <h3 class="certificado-card__title">Participação na OCE</h3>
-                    <p class="certificado-card__instituicao">Olimpíada do Conhecimento do Sistema Etapa</p>
+                    <h3 class="certificado-card__title">
+                        Participação na OCE
+                    </h3>
+
+                    <p class="certificado-card__instituicao">
+                        Olimpíada do Conhecimento do Sistema Etapa
+                    </p>
+
                     <p class="certificado-card__ano">2026</p>
                 </div>
+
             </article>
 
         </div>
