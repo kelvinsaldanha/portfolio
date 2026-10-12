@@ -460,6 +460,7 @@ permalink: /conquistas/
 </section>
 
 
+
 <!-- ============================================================
      CERTIFICADOS
      ============================================================ -->
@@ -473,72 +474,47 @@ permalink: /conquistas/
 
         <div class="certificados-grid">
 
-            <!-- CERTIFICADO OBMF -->
+            {% for item in site.data.certificados %}
 
             <article class="certificado-card">
 
                 <div class="certificado-card__imagem">
                     <a
-                        class="certificado-card__documento"
-                        href="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-obmf.pdf' | relative_url }}"
+                        href="{{ '/images/conquistas/' | append: item.pdf | relative_url }}"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Abrir certificado da OBMF em PDF"
+                        aria-label="Abrir {{ item.title }} em PDF"
                     >
-                        <span class="certificado-card__icone" aria-hidden="true">PDF</span>
-                        <span class="certificado-card__link">
-                            Visualizar certificado
-                        </span>
+                        <img
+                            src="{{ '/images/conquistas/' | append: item.image | relative_url }}"
+                            alt="{{ item.title }} — {{ item.year }}"
+                            loading="lazy"
+                            decoding="async"
+                        >
                     </a>
                 </div>
 
                 <div class="certificado-card__content">
+
                     <h3 class="certificado-card__title">
-                        Medalha de Prata na OBMF
+                        {{ item.title }}
                     </h3>
 
                     <p class="certificado-card__instituicao">
-                        Olimpíada Brasileira de Matemática Financeira
+                        {{ item.description }}
                     </p>
 
-                    <p class="certificado-card__ano">2026</p>
+                    <p class="certificado-card__ano">
+                        {{ item.year }}
+                    </p>
+
                 </div>
 
             </article>
 
-            <!-- CERTIFICADO OCE -->
-
-            <article class="certificado-card">
-
-                <div class="certificado-card__imagem">
-                    <a
-                        class="certificado-card__documento"
-                        href="{{ '/images/conquistas/kelvin-saldanha-mateus-certificado-oce.pdf' | relative_url }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Abrir certificado da OCE em PDF"
-                    >
-                        <span class="certificado-card__icone" aria-hidden="true">PDF</span>
-                        <span class="certificado-card__link">
-                            Visualizar certificado
-                        </span>
-                    </a>
-                </div>
-
-                <div class="certificado-card__content">
-                    <h3 class="certificado-card__title">
-                        Participação na OCE
-                    </h3>
-
-                    <p class="certificado-card__instituicao">
-                        Olimpíada do Conhecimento do Sistema Etapa
-                    </p>
-
-                    <p class="certificado-card__ano">2026</p>
-                </div>
-
-            </article>
+            {% endfor %}
 
         </div>
     </div>
 </section>
+
