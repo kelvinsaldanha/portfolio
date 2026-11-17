@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Eye Tracker CK² | Kelvin Saldanha Mateus"
-description: "Eye Tracker CK² — Sistema de controle de computador por movimentos oculares e gestos faciais, utilizando visão computacional, inteligência artificial e automação para acessibilidade."
+title: "Mouse Ocular · Eye Tracker CK² | Kelvin Saldanha Mateus"
+description: "Mouse Ocular (Eye Tracker CK²) — 1º lugar na 35ª META do CEFET-MG. Tecnologia assistiva que controla o computador com o olhar e gestos faciais, usando apenas uma webcam, visão computacional e Python."
 permalink: /eye-tracker/
 ---
 
@@ -38,6 +38,7 @@ permalink: /eye-tracker/
       "@id": "{{ site.url }}{{ site.baseurl }}/#person",
       "name": "Kelvin Saldanha Mateus",
       "url": "{{ site.url }}{{ site.baseurl }}/",
+      "award": "1º lugar — Categoria 4 (Ciências Humanas, Sociais, Biológicas e da Saúde) — 35ª META do CEFET-MG, 2026",
       "sameAs": [
         "https://www.linkedin.com/in/kelvin-saldanha-mateus/",
         "https://github.com/kelvinsaldanha"
@@ -98,20 +99,10 @@ permalink: /eye-tracker/
     color: var(--color-primary);
 }
 
-.projeto-detalhe__hero-imagem {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-    margin: 1.5rem 0 2.5rem;
-    background: var(--color-surface-light);
-}
-
-.projeto-detalhe__hero-imagem img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.projeto-detalhe__badge--premio {
+    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: #fff;
 }
 
 .projeto-detalhe__integrantes {
@@ -166,6 +157,8 @@ permalink: /eye-tracker/
     color: var(--color-text);
 }
 
+/* ---------- Tabelas ---------- */
+
 .tabela-gestos {
     width: 100%;
     border-collapse: collapse;
@@ -203,6 +196,12 @@ permalink: /eye-tracker/
     color: var(--color-text);
 }
 
+.tabela-wrapper {
+    overflow-x: auto;
+}
+
+/* ---------- Caixas de nota ---------- */
+
 .nota-box {
     background: var(--color-surface-light);
     border: 1px solid var(--color-border);
@@ -216,6 +215,124 @@ permalink: /eye-tracker/
 .nota-box strong {
     color: var(--color-text);
 }
+
+/* ---------- Espaços de mídia (fotos, print e vídeo) ---------- */
+
+.midia {
+    margin: 1.5rem 0 2.5rem;
+}
+
+.midia__slot {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface-light);
+}
+
+.midia__slot--4x3 {
+    aspect-ratio: 4 / 3;
+}
+
+.midia__placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border: 2px dashed var(--color-border);
+    border-radius: inherit;
+}
+
+.midia__placeholder strong {
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+.midia__slot img,
+.midia__slot video {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--color-surface-light);
+}
+
+.midia__slot video {
+    object-fit: contain;
+    background: #000;
+}
+
+.midia figcaption {
+    margin-top: 0.6rem;
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.midia-grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    align-items: start;
+}
+
+.midia-grade .midia {
+    margin: 0.5rem 0 1rem;
+}
+
+@media (max-width: 640px) {
+    .midia-grade {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- Linha do tempo ---------- */
+
+.linha-tempo {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid var(--color-border);
+}
+
+.linha-tempo li {
+    position: relative;
+    margin: 0 0 1.25rem;
+    padding-left: 0.5rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: 0.97rem;
+}
+
+.linha-tempo li::before {
+    content: "";
+    position: absolute;
+    left: -1.82rem;
+    top: 0.55rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+
+.linha-tempo li strong {
+    display: block;
+    color: var(--color-text);
+}
+
+/* ---------- Referências ---------- */
 
 .referencias-lista {
     list-style: none;
@@ -263,15 +380,15 @@ permalink: /eye-tracker/
 <div class="container">
 
     <p class="hero__overline">
-        Projeto · Visão Computacional & IA
+        Projeto · Tecnologia Assistiva · Visão Computacional
     </p>
 
     <h1 class="hero__title" id="projeto-titulo">
-        Eye Tracker CK²
+        Mouse Ocular — Eye Tracker CK²
     </h1>
 
     <p class="hero__subtitle">
-        Sistema de controle do computador por movimentos oculares e gestos faciais, utilizando visão computacional, inteligência artificial e automação.
+        Controle do computador com o olhar e gestos faciais, usando apenas uma webcam comum. Projeto vencedor do 1º lugar na 35ª META do CEFET-MG.
     </p>
 
 </div>
@@ -292,8 +409,12 @@ permalink: /eye-tracker/
 
 <div class="projeto-detalhe__meta">
 
+    <span class="projeto-detalhe__badge projeto-detalhe__badge--premio">
+        🥇 1º lugar — 35ª META CEFET-MG
+    </span>
+
     <span class="projeto-detalhe__badge projeto-detalhe__badge--status">
-        Em desenvolvimento — 2026
+        Versão beta 0.1.2 — 2026
     </span>
 
     <span class="projeto-detalhe__badge">
@@ -309,7 +430,7 @@ permalink: /eye-tracker/
     </span>
 
     <span class="projeto-detalhe__badge">
-        Inteligência Artificial
+        Windows
     </span>
 
     <span class="projeto-detalhe__badge">
@@ -318,22 +439,41 @@ permalink: /eye-tracker/
 
 </div>
 
-<div class="projeto-detalhe__hero-imagem">
+<!-- FOTO PRINCIPAL: trio com a medalha e a logo do CEFET-MG ao fundo -->
+<figure class="midia">
 
-    <img
-        src="{{ '/images/projects/eye-tracker.jpg' | relative_url }}"
-        alt="Eye Tracker CK² — sistema de rastreamento ocular"
-        onerror="this.parentElement.style.display='none'"
-    >
+    <div class="midia__slot">
 
-</div>
+        <div class="midia__placeholder">
+            <strong>Foto do trio com a medalha</strong>
+            Carlos, Kauan e Kelvin com a medalha do 1º lugar, com a logo do CEFET-MG ao fundo.
+        </div>
+
+        <img
+            src="{{ '/images/projects/eye-tracker-trio-medalha.jpg' | relative_url }}"
+            alt="Carlos Eduardo, Kauan Kerlon e Kelvin Saldanha com a medalha de 1º lugar na 35ª META, com a logo do CEFET-MG ao fundo"
+            loading="eager"
+            onerror="this.style.display='none'"
+        >
+
+    </div>
+
+    <figcaption>
+        A equipe CK² (Carlos, Kauan e Kelvin) com a medalha de 1º lugar na 35ª META do CEFET-MG, em 2026.
+    </figcaption>
+
+</figure>
 
 <p class="projeto-detalhe__integrantes">
 
-    <strong>Projeto META</strong> — Trabalho de conclusão do curso técnico em Equipamentos Biomédicos<br>
+    <strong>Projeto:</strong> Mouse Ocular — Tecnologia Assistiva para Promover a Acessibilidade e a Inclusão Digital de Pessoas com Deficiência Motora<br>
+
+    <strong>Evento:</strong> 35ª META do CEFET-MG — 1º lugar na Categoria 4: Ciências Humanas, Sociais, Biológicas e da Saúde<br>
+
+    <strong>Curso:</strong> Técnico em Equipamentos Biomédicos<br>
 
     <strong>Instituição:</strong>
-    CEFET-MG, Belo Horizonte<br>
+    CEFET-MG, Departamento de Eletrônica e Biomédica, Belo Horizonte<br>
 
     <strong>Integrantes:</strong>
     Carlos Eduardo Ferreira da Silva,
@@ -341,10 +481,10 @@ permalink: /eye-tracker/
     Kelvin Saldanha Mateus<br>
 
     <strong>Orientador:</strong>
-    Prof. Alexandre Rodrigues Farias<br>
+    Prof. Dr. Alexandre Rodrigues Farias<br>
 
     <strong>Co-orientadora:</strong>
-    Prof.ª Tálita Saemi Payossim Sono<br>
+    Profa. Dra. Tálita Saemi Payossim Sono<br>
 
     <strong>Ano:</strong> 2026
 
@@ -361,20 +501,164 @@ permalink: /eye-tracker/
     </h2>
 
     <p>
-        A tetraplegia é uma condição que afeta a mobilidade dos membros superiores e inferiores, frequentemente resultante de lesões na medula espinhal ou doenças neuromusculares. Pessoas com essa condição enfrentam desafios significativos para interagir com computadores e dispositivos eletrônicos, o que pode limitar sua independência, produtividade e qualidade de vida.
+        Selecionar um arquivo, abrir uma pasta ou digitar uma mensagem são tarefas que costumam depender do mouse e do teclado. Para pessoas com limitações motoras severas, como na tetraplegia, essa dependência pode limitar a autonomia, a produtividade e a qualidade de vida.
     </p>
 
     <p>
-        O <strong>Eye Tracker CK²</strong> é um sistema de controle de cursor baseado em rastreamento ocular e reconhecimento de gestos faciais, desenvolvido para permitir que pessoas com limitações motoras severas utilizem o computador de forma autônoma. Diferentemente de soluções comerciais que exigem hardware especializado (como rastreadores infravermelhos da Tobii), nosso sistema utiliza uma <strong>webcam convencional</strong> e algoritmos de visão computacional, tornando a tecnologia mais acessível e de baixo custo.
+        O <strong>Mouse Ocular</strong>, também chamado de <strong>Eye Tracker CK²</strong>, é um sistema que move o cursor com o olhar e executa comandos por gestos faciais. Diferentemente de soluções comerciais que exigem rastreadores infravermelhos dedicados, como os da Tobii, ele usa uma <strong>webcam convencional</strong> e software, o que o torna mais acessível e de baixo custo.
     </p>
 
     <p>
-        O projeto integra técnicas de <strong>visão computacional</strong>, <strong>processamento de sinais</strong> (filtros de Kalman, EMA) e <strong>inteligência artificial</strong> (modelos de regressão para refinar a posição do olhar), além de um robusto sistema de reconhecimento de gestos faciais que permite executar comandos como clique, duplo clique, arrastar, rolagem e atalhos de teclado.
+        O trabalho começou em abril de 2026, no curso Técnico em Equipamentos Biomédicos do CEFET-MG, e foi apresentado na <strong>35ª META</strong>. O nome <strong>CK²</strong> vem das iniciais dos integrantes: Carlos, Kauan e Kelvin (CKK).
     </p>
 
     <p>
-        O trabalho foi desenvolvido no âmbito da <strong>META</strong> (Modelo de Ensino com Ênfase em Tecnologia e Aprendizagem) do CEFET-MG e também participou do <strong>Desafio CIIA Saúde 2026</strong>, promovido pela UFMG, reforçando seu potencial de impacto social e inovação tecnológica.
+        O projeto também foi inscrito no <strong>Desafio CIIA Saúde 2026</strong>, promovido pela UFMG, voltado à aplicação de inteligência artificial na saúde.
     </p>
+
+</div>
+
+<!-- ========================================================
+     RECONHECIMENTO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        🥇 Reconhecimento: 1º lugar na 35ª META
+    </h2>
+
+    <p>
+        O Mouse Ocular conquistou o <strong>1º lugar na Categoria 4 (Ciências Humanas, Sociais, Biológicas e da Saúde)</strong> da 35ª META do CEFET-MG, em 2026. A premiação reconhece o potencial do projeto para ampliar a autonomia e a inclusão digital de pessoas com deficiência motora.
+    </p>
+
+    <!-- FOTO 2: dia da apresentação -->
+    <figure class="midia">
+
+        <div class="midia__slot">
+
+            <div class="midia__placeholder">
+                <strong>Foto do dia da apresentação</strong>
+                Equipe apresentando o Mouse Ocular na 35ª META.
+            </div>
+
+            <img
+                src="{{ '/images/projects/eye-tracker-apresentacao-meta.jpg' | relative_url }}"
+                alt="Equipe apresentando o Mouse Ocular na 35ª META do CEFET-MG"
+                loading="lazy"
+                onerror="this.style.display='none'"
+            >
+
+        </div>
+
+        <figcaption>
+            Apresentação do Mouse Ocular na 35ª META do CEFET-MG.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+<!-- ========================================================
+     DEMONSTRAÇÃO EM VÍDEO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Demonstração em vídeo
+    </h2>
+
+    <p>
+        Veja o Mouse Ocular em uso: a webcam capta o rosto, o programa estima a direção do olhar para mover o cursor, e as piscadas e expressões viram cliques, arrasto, rolagem e menu.
+    </p>
+
+    <!-- VÍDEO DEMONSTRATIVO -->
+    <figure class="midia">
+
+        <div class="midia__slot">
+
+            <div class="midia__placeholder">
+                <strong>Vídeo demonstrativo</strong>
+                Demonstração do Mouse Ocular em funcionamento.
+            </div>
+
+            <video
+                controls
+                preload="metadata"
+                playsinline
+                poster="{{ '/images/projects/eye-tracker-video-poster.jpg' | relative_url }}"
+            >
+                <source
+                    src="{{ '/videos/eye-tracker-demo.mp4' | relative_url }}"
+                    type="video/mp4"
+                    onerror="this.parentElement.style.display='none'"
+                >
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
+
+        </div>
+
+        <figcaption>
+            Demonstração do Mouse Ocular controlando o computador com o olhar e gestos faciais.
+        </figcaption>
+
+    </figure>
+
+</div>
+
+<!-- ========================================================
+     TRAJETÓRIA
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Trajetória do projeto
+    </h2>
+
+    <p>
+        O desenvolvimento seguiu uma abordagem iterativa, com reuniões regulares com o orientador, pesquisa bibliográfica e testes práticos. Os principais marcos registrados no diário de bordo foram:
+    </p>
+
+    <ul class="linha-tempo">
+
+        <li>
+            <strong>Abril — escolha do tema</strong>
+            Definição do Mouse Ocular como projeto da META, pelo caráter inovador e pela relevância social. A professora Tálita aceitou ser co-orientadora e, em 29/04, ocorreu a reunião de kick-off com o professor Alexandre.
+        </li>
+
+        <li>
+            <strong>Maio — pesquisa e mudança de abordagem</strong>
+            A ideia inicial previa eletro-oculografia (sensor AD8232) e ESP32. Após pesquisar trabalhos semelhantes e discutir a viabilidade, o grupo adotou uma abordagem de visão computacional com webcam. A base de estudo foi o projeto de Shamilka Perera (Python, OpenCV e MediaPipe).
+        </li>
+
+        <li>
+            <strong>Maio — primeiras melhorias</strong>
+            Inclusão de Filtro de Kalman e zona morta para reduzir a tremedeira do cursor, e estimativa de pose da cabeça (Yaw, Pitch e Roll) com <code>cv2.solvePnP()</code>.
+        </li>
+
+        <li>
+            <strong>Junho — calibração e inteligência artificial</strong>
+            Primeira versão de um sistema de calibração e de um modelo de IA, com mais de 7.000 amostras coletadas de duas pessoas. O orientador sugeriu comparar o sistema com e sem IA e organizar testes em diferentes condições. A revisão bibliográfica analisou teses, artigos e relatórios sobre rastreamento ocular.
+        </li>
+
+        <li>
+            <strong>Junho e julho — arquitetura modular e gestos</strong>
+            Reorganização do código em módulos independentes, com sistema de confiança. Implementação dos gestos faciais com máquinas de estados, histerese, debounce e janelas temporais.
+        </li>
+
+        <li>
+            <strong>Julho e agosto — site e GitHub</strong>
+            Criação do site oficial do projeto e do repositório público com o código-fonte.
+        </li>
+
+        <li>
+            <strong>Outubro — aplicativo para Windows</strong>
+            Menu flutuante revisado, perfis pessoais, recentralização do olhar, janela inicial (hub) e instalador do <strong>Mouse Ocular v0.1.2</strong>.
+        </li>
+
+    </ul>
 
 </div>
 
@@ -389,63 +673,63 @@ permalink: /eye-tracker/
     </h2>
 
     <p>
-        O desenvolvimento do Eye Tracker CK² seguiu uma abordagem iterativa, com evolução contínua baseada em testes práticos, feedback do orientador e análise de trabalhos acadêmicos da área. A arquitetura final do sistema é composta por módulos independentes, organizados em um pipeline de processamento em tempo real.
+        A arquitetura final é composta por módulos independentes (câmera, pré-processamento, detecção facial, geometria, pose da cabeça, íris, estimação do olhar, confiança, gestos, controle do mouse, menu e perfis), organizados em um pipeline de processamento em tempo real.
     </p>
 
     <h3 class="projeto-secao__subtitulo">
-        Tecnologias Utilizadas
+        Tecnologias utilizadas
     </h3>
 
     <ul>
         <li><strong>Python 3</strong> — linguagem principal de desenvolvimento;</li>
-        <li><strong>OpenCV</strong> — captura de vídeo e processamento de imagens;</li>
-        <li><strong>MediaPipe</strong> — extração da malha facial (468 landmarks) e rastreamento da íris;</li>
-        <li><strong>PyAutoGUI</strong> — controle do mouse e teclado;</li>
-        <li><strong>Scikit-learn</strong> — modelos de IA (Random Forest, SVR, MLP) para refinamento do olhar;</li>
-        <li><strong>NumPy</strong> — cálculos matriciais e processamento numérico;</li>
-        <li><strong>Joblib</strong> — serialização e carregamento dos modelos de IA treinados.</li>
+        <li><strong>OpenCV</strong> — acesso à webcam, captura de vídeo e preparação das imagens;</li>
+        <li><strong>MediaPipe (Face Landmarker)</strong> — pontos de referência do rosto, dos olhos e da íris;</li>
+        <li><strong>NumPy</strong> — cálculos numéricos e geométricos;</li>
+        <li><strong>PyAutoGUI</strong> — movimento do cursor, cliques, rolagem e atalhos no sistema operacional;</li>
+        <li><strong>PyInstaller e Inno Setup</strong> — empacotamento do aplicativo e criação do instalador para Windows.</li>
     </ul>
 
     <h3 class="projeto-secao__subtitulo">
-        Pipeline de Processamento
+        Pipeline de processamento
     </h3>
 
     <p>
-        O sistema processa cada frame da webcam em tempo real, seguindo as etapas:
+        O sistema processa cada quadro da webcam em tempo real, seguindo as etapas:
     </p>
 
     <ol style="color: var(--color-text-muted); line-height: 1.8; margin-left: 1.25rem;">
-        <li><strong>Detecção Facial</strong> — identificação da face utilizando o MediaPipe Face Detection;</li>
-        <li><strong>Extração de Landmarks</strong> — obtenção dos 468 pontos da malha facial, com ênfase nos olhos, íris, sobrancelhas e boca;</li>
-        <li><strong>Estimativa de Pose (Head Pose)</strong> — cálculo dos ângulos Yaw, Pitch e Roll usando <code>cv2.solvePnP()</code> para compensar movimentos da cabeça;</li>
-        <li><strong>Cálculo do EAR (Eye Aspect Ratio)</strong> — métrica utilizada para detectar piscadas e estado dos olhos;</li>
-        <li><strong>Rastreamento da Íris</strong> — determinação do centro da pupila a partir dos landmarks da íris;</li>
-        <li><strong>Filtragem e Suavização</strong> — aplicação de Filtro de Kalman (6 estados), EMA adaptativa e zona morta dinâmica;</li>
-        <li><strong>Mapeamento do Olhar</strong> — conversão das coordenadas da íris em posição do cursor, utilizando homografia ou modelo de IA;</li>
-        <li><strong>Reconhecimento de Gestos</strong> — identificação de piscadas, sobrancelhas, sorrisos e gestos compostos;</li>
-        <li><strong>Execução de Comandos</strong> — envio de ações para o sistema operacional via PyAutoGUI;</li>
-        <li><strong>Sistema de Confiança</strong> — avaliação da qualidade de cada frame antes de movimentar o cursor.</li>
+        <li><strong>Captura</strong> — a webcam fornece os quadros digitais ao computador;</li>
+        <li><strong>Detecção facial e landmarks</strong> — o MediaPipe localiza o rosto e extrai os pontos dos olhos, da íris, das sobrancelhas e da boca;</li>
+        <li><strong>Pose da cabeça</strong> — cálculo de Yaw, Pitch e Roll com <code>cv2.solvePnP()</code>, para considerar os movimentos da cabeça;</li>
+        <li><strong>EAR (Eye Aspect Ratio)</strong> — medida da abertura dos olhos, usada para detectar piscadas;</li>
+        <li><strong>Posição da íris</strong> — posição das íris em relação a uma referência facial, usada para estimar a direção do olhar;</li>
+        <li><strong>Filtragem e suavização</strong> — Filtro de Kalman, EMA adaptativa, zona morta, controle de velocidade, aceleração e limitação do passo do cursor;</li>
+        <li><strong>Sistema de confiança</strong> — avalia a qualidade de cada quadro antes de movimentar o cursor;</li>
+        <li><strong>Reconhecimento de gestos</strong> — piscadas, sobrancelhas, sorriso, boca e gestos compostos, com máquinas de estados e janelas temporais;</li>
+        <li><strong>Execução de comandos</strong> — as ações são enviadas ao mouse, ao teclado ou ao menu via PyAutoGUI.</li>
     </ol>
 
     <h3 class="projeto-secao__subtitulo">
-        Calibração e Inteligência Artificial
+        Calibração e inteligência artificial
     </h3>
 
     <p>
-        O sistema possui um módulo de calibração que coleta amostras do olhar do usuário enquanto ele fixa pontos em uma grade na tela (3x3, 5x5 ou 7x7). As amostras incluem as coordenadas da íris, ângulos da cabeça e a posição real observada. Esses dados são utilizados para treinar modelos de IA (Random Forest, SVR ou MLP) que aprendem a mapear com precisão o olhar para coordenadas da tela, compensando diferenças individuais e condições de iluminação.
+        Na fase de pesquisa, o grupo coletou amostras de calibração (posição da íris, pose da cabeça e ponto observado na tela) e testou modelos de regressão (Random Forest, SVR e MLP) e homografia para mapear o olhar. Na versão atual do aplicativo, a calibração acessível pelo menu é a <strong>recentralização</strong>: a pessoa olha para o centro desejado e confirma com o gesto de clique. A calibração das sobrancelhas, nas condições neutra e levantada, também está integrada ao menu.
     </p>
 
     <div class="nota-box">
-        <strong>Diferencial:</strong> O modelo treinado é salvo em um arquivo <code>.joblib</code> e carregado pelo script principal, permitindo previsões instantâneas e calibração personalizada por usuário.
+        <strong>Em evolução:</strong> a coleta multiponto com modelos de aprendizado de máquina existe no código como recurso interno, mas ainda não está conectada ao fluxo de uso do aplicativo. O TensorFlow foi retirado do pacote por não ser necessário à implementação atual.
     </div>
 
     <h3 class="projeto-secao__subtitulo">
-        Gestos e Comandos
+        Gestos e comandos
     </h3>
 
     <p>
-        O sistema reconhece uma variedade de gestos faciais e os converte em ações do mouse e teclado. A tabela abaixo resume os comandos implementados:
+        Os gestos faciais são convertidos em ações do mouse e do teclado. A tabela resume os comandos implementados:
     </p>
+
+    <div class="tabela-wrapper">
 
     <table class="tabela-gestos">
         <thead>
@@ -457,27 +741,27 @@ permalink: /eye-tracker/
         <tbody>
             <tr>
                 <td>Piscada do olho direito</td>
-                <td>Clique esquerdo</td>
+                <td>Clique esquerdo (selecionar)</td>
             </tr>
             <tr>
                 <td>Piscada do olho esquerdo</td>
-                <td>Clique direito</td>
-            </tr>
-            <tr>
-                <td>Duas piscadas consecutivas (olho direito)</td>
-                <td>Duplo clique</td>
+                <td>Clique direito (menu de contexto)</td>
             </tr>
             <tr>
                 <td>Sobrancelhas levantadas</td>
-                <td>Modo arrastar (drag)</td>
+                <td>Arrastar: mantém o botão esquerdo pressionado</td>
             </tr>
             <tr>
-                <td>Boca aberta</td>
-                <td>Modo rolagem (scroll)</td>
+                <td>Boca aberta (fora do menu)</td>
+                <td>Rolagem vertical, conforme a direção do olhar</td>
             </tr>
             <tr>
-                <td>Sorriso</td>
-                <td>Abrir/fechar menu principal</td>
+                <td>Sorriso mantido por 1,5 segundo</td>
+                <td>Abrir o menu flutuante (o tempo evita aberturas por sorrisos espontâneos)</td>
+            </tr>
+            <tr>
+                <td>Sorriso + sobrancelhas levantadas</td>
+                <td>Congelar/descongelar o cursor</td>
             </tr>
             <tr>
                 <td>Sobrancelhas levantadas + olho direito fechado</td>
@@ -488,19 +772,99 @@ permalink: /eye-tracker/
                 <td>Ctrl+V (colar)</td>
             </tr>
             <tr>
-                <td>Olhos fechados por 2 segundos</td>
-                <td>Pausar/retomar rastreamento</td>
-            </tr>
-            <tr>
-                <td>Sorriso + sobrancelhas levantadas</td>
-                <td>Congelar/descongelar cursor</td>
+                <td>Dois olhos fechados por cerca de 2 segundos</td>
+                <td>Pausar/retomar o rastreamento (útil para assistir a vídeos sem o cursor seguir o olhar)</td>
             </tr>
         </tbody>
     </table>
 
+    </div>
+
     <p>
-        Para evitar conflitos entre gestos semelhantes, foi implementada uma <strong>lógica temporal com janela de reconhecimento</strong> (aproximadamente 700 ms) para gestos compostos, além de mecanismos de debounce, histerese e máquinas de estado para cada gesto.
+        Para evitar conflitos entre gestos semelhantes, foi implementada uma <strong>janela de reconhecimento de cerca de 700 ms</strong> para gestos compostos, além de debounce, histerese e máquinas de estados. Com o menu aberto, os comandos são consumidos pelo próprio menu, evitando cliques ou rolagens involuntárias na janela atrás dele.
     </p>
+
+    <div class="nota-box">
+        <strong>Duplo clique:</strong> versões anteriores desta página citavam duas piscadas do olho direito como duplo clique. Na revisão do código da versão 0.1.2, essa piscada emite um clique simples; duas piscadas rápidas podem ser interpretadas como duplo clique pelo sistema operacional, mas não há um reconhecedor dedicado. O ponto está em revisão.
+    </div>
+
+</div>
+
+<!-- ========================================================
+     APLICATIVO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        O aplicativo Mouse Ocular para Windows
+    </h2>
+
+    <p>
+        Para reduzir a necessidade de comandos de terminal, o código foi transformado em um aplicativo instalável. A versão <strong>0.1.2</strong> (beta) inclui:
+    </p>
+
+    <ul>
+        <li><strong>Janela inicial (hub)</strong> — a câmera só é ligada depois que a pessoa pressiona o botão de início;</li>
+        <li><strong>Menu flutuante</strong> com 23 opções: iniciar/parar rastreamento, recentralização, ativar/desativar cliques, arrastar e sobrancelha, velocidade, suavização, zona morta, aceleração, resolução, FPS, brilho, exposição e perfis;</li>
+        <li><strong>Perfis pessoais</strong> — criar, selecionar, salvar e excluir (com confirmação e backup). O perfil Pré-determinado é protegido contra exclusão e sobrescrita;</li>
+        <li><strong>Painel de desempenho</strong> — FPS, tempo por quadro e estado dos gestos;</li>
+        <li><strong>Dados separados da instalação</strong> — configurações e perfis ficam em <code>%LOCALAPPDATA%\EyeMouse</code> e são preservados em atualizações;</li>
+        <li><strong>Instalador</strong> de cerca de 70 MB, criado com Inno Setup.</li>
+    </ul>
+
+    <p>
+        O programa é executado localmente no computador, e a distribuição gratuita busca reduzir a barreira de acesso: basta uma webcam e um computador já disponíveis.
+    </p>
+
+</div>
+
+<!-- ========================================================
+     SITE DO PROJETO
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Site oficial do projeto
+    </h2>
+
+    <p>
+        O projeto tem um site próprio com apresentação, tecnologias, gestos, equipe, orientações de instalação, histórico e documentação.
+    </p>
+
+    <!-- PRINT DO SITE -->
+    <figure class="midia">
+
+        <div class="midia__slot">
+
+            <div class="midia__placeholder">
+                <strong>Print do site do projeto</strong>
+                Captura de tela de kelvinsaldanha.github.io/Eye-tracker-CKK
+            </div>
+
+            <img
+                src="{{ '/images/projects/eye-tracker-site-print.png' | relative_url }}"
+                alt="Captura de tela do site oficial do Mouse Ocular, Eye Tracker CKK"
+                loading="lazy"
+                onerror="this.style.display='none'"
+            >
+
+        </div>
+
+        <figcaption>
+            Site oficial do Mouse Ocular — Eye Tracker CKK.
+        </figcaption>
+
+    </figure>
+
+    <div class="projeto-detalhe__cta">
+
+        <a href="https://kelvinsaldanha.github.io/Eye-tracker-CKK/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+            Acessar o site do projeto
+        </a>
+
+    </div>
 
 </div>
 
@@ -515,24 +879,33 @@ permalink: /eye-tracker/
     </h2>
 
     <p>
-        O Eye Tracker CK² demonstrou capacidade de rastrear o olhar e executar comandos de forma funcional, utilizando apenas uma webcam convencional. Os principais resultados observados incluem:
+        O Mouse Ocular demonstrou, em apresentações ao orientador e na 35ª META, a capacidade de mover o cursor e executar comandos usando apenas uma webcam convencional. Os principais resultados registrados foram:
     </p>
 
     <ul>
-        <li><strong>Precisão do cursor</strong> — com a calibração por IA, o erro médio foi reduzido significativamente em relação aos métodos matemáticos tradicionais;</li>
-        <li><strong>Estabilidade</strong> — a combinação do Filtro de Kalman com EMA adaptativa reduziu drasticamente o jitter (tremor do cursor);</li>
-        <li><strong>Reconhecimento de gestos</strong> — a máquina de estados e os filtros temporais aumentaram a taxa de acertos na detecção de piscadas e comandos;</li>
-        <li><strong>Portabilidade</strong> — o sistema foi testado em diferentes computadores e condições de iluminação, apresentando bom desempenho;</li>
-        <li><strong>Acessibilidade</strong> — o sistema permite que usuários com limitações motoras realizem tarefas básicas no computador (navegação, digitação, leitura) sem necessidade de hardware especializado.</li>
+        <li><strong>1º lugar</strong> na Categoria 4 da 35ª META do CEFET-MG;</li>
+        <li><strong>Aplicativo instalável</strong> para Windows (v0.1.2), com hub, menu, perfis e painel de desempenho;</li>
+        <li><strong>Estabilidade do cursor</strong> — a combinação de Filtro de Kalman, EMA e zona morta reduziu a tremedeira observada nas primeiras versões;</li>
+        <li><strong>Gestos</strong> — máquinas de estados, histerese e filtros temporais melhoraram o reconhecimento de piscadas, sobrancelhas e comandos compostos;</li>
+        <li><strong>Verificações de software</strong> — 181 testes automáticos aprovados, 21 cenários de regressão de teclas sem diferenças e teste de inicialização do MediaPipe empacotado aprovado.</li>
     </ul>
 
-    <p>
-        O projeto foi apresentado ao orientador e à comissão da META em múltiplas reuniões, recebendo feedbacks positivos sobre a robustez e o potencial de aplicação prática.
-    </p>
-
     <div class="nota-box">
-        <strong>Desafios superados:</strong> A principal dificuldade foi a detecção precisa de piscadas do olho esquerdo, que foi corrigida com ajustes nos limiares, histerese e filtragem temporal. O conflito entre gestos compostos (ex: arrastar vs. Ctrl+C) foi resolvido com a janela temporal de reconhecimento.
+        <strong>Importante:</strong> os testes automáticos verificam o comportamento do software. Eles não medem a precisão espacial do olhar, a taxa de acertos dos gestos nem representam validação clínica ou avaliação com o público-alvo.
     </div>
+
+    <h3 class="projeto-secao__subtitulo">
+        Limitações e próximos passos
+    </h3>
+
+    <ul>
+        <li><strong>Avaliação experimental</strong> — medir precisão, falsos positivos e falsos negativos em diferentes condições de iluminação, distância e posicionamento da cabeça;</li>
+        <li><strong>Piscadas e arrasto</strong> — seguir refinando a detecção da piscada do olho esquerdo e os gestos compostos;</li>
+        <li><strong>Ajustes de câmera</strong> — aplicar resolução e FPS escolhidos no menu sem exigir reinício;</li>
+        <li><strong>Acessibilidade da navegação</strong> — garantir uma forma de recuperação quando cliques ou rastreamento são desativados;</li>
+        <li><strong>Tempo de inicialização</strong> — reduzir a espera entre iniciar e ver a câmera, com pré-carga das bibliotecas;</li>
+        <li><strong>Instalador em português</strong> — a tradução para PT-BR está planejada.</li>
+    </ul>
 
 </div>
 
@@ -547,23 +920,34 @@ permalink: /eye-tracker/
     </h2>
 
     <p>
-        O Eye Tracker CK² representa uma contribuição significativa para o campo da tecnologia assistiva, oferecendo uma alternativa acessível e de baixo custo para pessoas com tetraplegia e outras limitações motoras severas. O sistema integra com sucesso técnicas de visão computacional, inteligência artificial e reconhecimento de gestos para proporcionar uma interação natural e eficiente com o computador.
+        O Mouse Ocular mostra que é possível oferecer uma alternativa de interação com o computador para pessoas com limitações motoras usando hardware acessível e software bem projetado. O projeto integra visão computacional, processamento de sinais e reconhecimento de gestos em um aplicativo gratuito, e foi reconhecido com o 1º lugar na 35ª META do CEFET-MG.
     </p>
 
     <p>
-        A modularidade da arquitetura desenvolvida permite futuras expansões, incluindo:
+        A arquitetura modular permite futuras expansões:
     </p>
 
     <ul>
-        <li><strong>Controle de dispositivos IoT</strong> — automação residencial via Wi-Fi/Bluetooth;</li>
         <li><strong>Teclado virtual adaptativo</strong> — com predição de texto baseada em Modelos de Markov;</li>
-        <li><strong>Treinamento oculomotor</strong> — programas para melhorar o controle dos olhos e reduzir fadiga;</li>
-        <li><strong>Interface web</strong> — para configuração remota e monitoramento;</li>
-        <li><strong>Versão executável (.exe)</strong> — para facilitar a instalação por usuários finais.</li>
+        <li><strong>Treinamento oculomotor</strong> — programas para melhorar o controle dos olhos e reduzir a fadiga;</li>
+        <li><strong>Controle de dispositivos IoT</strong> — automação residencial;</li>
+        <li><strong>Refinamento do mapeamento do olhar</strong> — integração de modelos de aprendizado de máquina ao fluxo do aplicativo.</li>
     </ul>
 
+</div>
+
+<!-- ========================================================
+     AGRADECIMENTOS
+     ======================================================== -->
+
+<div class="projeto-secao">
+
+    <h2 class="projeto-secao__titulo">
+        Agradecimentos
+    </h2>
+
     <p>
-        O projeto reforça o compromisso do grupo com a inovação tecnológica e a inclusão social, demonstrando que soluções de alto impacto podem ser desenvolvidas com hardware acessível e software bem projetado.
+        Agradecemos ao nosso orientador, Prof. Dr. Alexandre Rodrigues Farias, pela ajuda, orientação e incentivo durante todo o desenvolvimento, e à nossa co-orientadora, Profa. Dra. Tálita Saemi Payossim Sono, pelo apoio e pelas contribuições ao projeto. Agradecemos também ao CEFET-MG e a todos que acompanharam e apoiaram o trabalho.
     </p>
 
 </div>
@@ -593,6 +977,41 @@ permalink: /eye-tracker/
         </li>
 
         <li>
+            FANTI, Juliana Roberta.
+            Dissertação sobre o impacto de programas de treinamento no uso de rastreadores oculares por pessoas com doenças neuromusculares, 2019.
+        </li>
+
+        <li>
+            JEEVITHASHREE, D. V.; JAIN, Puneeth; SALUJA, KamalPreet; BISWAS, Pradipta.
+            Teclado virtual multilíngue adaptativo para usuários com deficiências motoras e de fala severas, 2021.
+        </li>
+
+        <li>
+            MEENA; SALVI.
+            Teclado virtual controlado pelo olhar com Deep Learning e webcams convencionais, 2025.
+        </li>
+
+        <li>
+            TAMILSELVI; SARGUNA.
+            Teclado virtual baseado em rastreamento ocular para pessoas com deficiência, 2017.
+        </li>
+
+        <li>
+            FURLANETTI; ALVES.
+            Desempenho da biblioteca ITU Gaze Tracker em condições adversas, 2015.
+        </li>
+
+        <li>
+            SPILLER; AUDI; BRACCIALLI.
+            Desempenho de crianças e adolescentes com paralisia cerebral com diferentes dispositivos de entrada, incluindo mouse ocular, 2019.
+        </li>
+
+        <li>
+            HEMMINGSSON; BORGESTIG.
+            Levantamento nacional sobre a usabilidade de computadores controlados pelo olhar, Suécia, 2020.
+        </li>
+
+        <li>
             PERERA, Shamilka.
             <em>Real-time Eye Tracking using MediaPipe and OpenCV.</em>
             Disponível em:
@@ -603,7 +1022,7 @@ permalink: /eye-tracker/
 
         <li>
             GOOGLE.
-            <em>MediaPipe Face Mesh.</em>
+            <em>MediaPipe Face Landmarker.</em>
             Disponível em:
             <a href="https://developers.google.com/mediapipe/solutions/vision/face_landmarker" target="_blank" rel="noopener noreferrer">
                 developers.google.com
@@ -612,7 +1031,7 @@ permalink: /eye-tracker/
 
         <li>
             SILVA, Carlos Eduardo Ferreira da; JESUS, Kauan Kerlon Costa de; MATEUS, Kelvin Saldanha.
-            <em>Eye Tracker CK² — Código-fonte.</em>
+            <em>Mouse Ocular — Eye Tracker CK² — Código-fonte.</em>
             GitHub.
             Disponível em:
             <a href="https://github.com/kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer">
@@ -630,7 +1049,11 @@ permalink: /eye-tracker/
         &larr; Voltar para Projetos
     </a>
 
-    <a href="https://github.com/Kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+    <a href="https://kelvinsaldanha.github.io/Eye-tracker-CKK/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+        Site do projeto
+    </a>
+
+    <a href="https://github.com/kelvinsaldanha/Eye-tracker-CKK" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
         Ver no GitHub
     </a>
 
@@ -639,3 +1062,64 @@ permalink: /eye-tracker/
 </div>
 
 </section>
+
+<!-- ============================================================
+     GUIA: ONDE INSERIR AS FOTOS E O VÍDEO
+     (este comentário pode ser apagado depois)
+
+     Todos os caminhos abaixo são a partir da RAIZ do repositório do
+     seu site (kelvinsaldanha.github.io).
+
+     FOTOS E PRINT  ->  pasta: /images/projects/
+     (a mesma pasta onde já está eye-tracker.jpg)
+
+       1) Foto do trio com a medalha e a logo do CEFET-MG ao fundo
+          arquivo: images/projects/eye-tracker-trio-medalha.jpg
+          aparece no topo da página (formato 16:9, horizontal)
+
+       2) Foto do dia da apresentação
+          arquivo: images/projects/eye-tracker-apresentacao-meta.jpg
+          aparece na seção "Reconhecimento: 1º lugar na 35ª META"
+          (formato 16:9, horizontal)
+
+       3) Print do site (kelvinsaldanha.github.io/Eye-tracker-CKK)
+          arquivo: images/projects/eye-tracker-site-print.png
+          aparece na seção "Site oficial do projeto"
+          (formato 16:9, horizontal)
+
+     VÍDEO DEMONSTRATIVO  ->  pasta: /videos/  (crie a pasta, se não existir)
+
+       4) arquivo: videos/eye-tracker-demo.mp4
+          (formato MP4, codec H.264; use um vídeo curto, de preferência
+          até 50 segundos e abaixo de 25 MB. O GitHub Pages aceita
+          arquivos de até 100 MB, mas vídeos pesados carregam devagar)
+
+       5) Capa do vídeo (opcional)
+          arquivo: images/projects/eye-tracker-video-poster.jpg
+
+     COMO FUNCIONA
+       - Enquanto o arquivo não existir, a página mostra uma caixa
+         tracejada com a descrição do que deve entrar ali. Quando você
+         subir o arquivo com o nome exato acima, a imagem ou o vídeo
+         aparece sozinho, sem mexer no código.
+       - Para trocar o nome ou a extensão de um arquivo (por exemplo,
+         .png em vez de .jpg), altere o caminho no atributo src da
+         imagem correspondente nesta página.
+       - Dica: comprima as fotos (de preferência abaixo de 500 KB cada)
+         para a página carregar rápido.
+
+     ALTERNATIVA PARA O VÍDEO (YouTube)
+       Se preferir não hospedar o MP4 no repositório, publique o vídeo
+       no YouTube (como "Não listado" ou "Público") e, na seção
+       "Demonstração em vídeo", troque o bloco <video> ... </video> por:
+
+       <iframe
+           src="https://www.youtube.com/embed/ID_DO_VIDEO"
+           title="Demonstração do Mouse Ocular"
+           style="position:absolute; inset:0; width:100%; height:100%; border:0;"
+           allow="accelerometer; encrypted-media; picture-in-picture"
+           allowfullscreen>
+       </iframe>
+
+       (ID_DO_VIDEO é o trecho depois de v= no link do YouTube)
+     ============================================================ -->
